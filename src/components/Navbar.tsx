@@ -42,10 +42,10 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#000000e6] backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <h1 className="text-2xl font-playfair font-bold text-funeral-800">
+          <h1 className="text-2xl font-playfair font-bold text-white">
             <span className="text-primary">Nekrolog</span> Łódź
           </h1>
         </div>
@@ -54,25 +54,25 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <button 
             onClick={() => scrollToSection('home')} 
-            className="text-funeral-700 hover:text-primary transition-colors"
+            className="text-white hover:text-primary transition-colors"
           >
             Strona Główna
           </button>
           <button 
             onClick={() => scrollToSection('services')} 
-            className="text-funeral-700 hover:text-primary transition-colors"
+            className="text-white hover:text-primary transition-colors"
           >
             Usługi
           </button>
           <button 
             onClick={() => scrollToSection('about')} 
-            className="text-funeral-700 hover:text-primary transition-colors"
+            className="text-white hover:text-primary transition-colors"
           >
             O nas
           </button>
           <button 
             onClick={() => scrollToSection('contact')} 
-            className="text-funeral-700 hover:text-primary transition-colors"
+            className="text-white hover:text-primary transition-colors"
           >
             Kontakt
           </button>
@@ -85,35 +85,35 @@ const Navbar = () => {
         </a>
         
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-funeral-800" onClick={toggleMenu}>
+        <button className="md:hidden text-white" onClick={toggleMenu}>
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
       
       {/* Mobile Navigation */}
-      <div className={`md:hidden fixed inset-0 top-16 bg-white z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`md:hidden fixed inset-0 top-16 bg-[#000000e6] z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col p-6 space-y-6">
           <button 
             onClick={() => scrollToSection('home')} 
-            className="text-funeral-700 hover:text-primary transition-colors text-xl py-2 border-b border-funeral-100"
+            className="text-white hover:text-primary transition-colors text-xl py-2 border-b border-white/10"
           >
             Strona Główna
           </button>
           <button 
             onClick={() => scrollToSection('services')} 
-            className="text-funeral-700 hover:text-primary transition-colors text-xl py-2 border-b border-funeral-100"
+            className="text-white hover:text-primary transition-colors text-xl py-2 border-b border-white/10"
           >
             Usługi
           </button>
           <button 
             onClick={() => scrollToSection('about')} 
-            className="text-funeral-700 hover:text-primary transition-colors text-xl py-2 border-b border-funeral-100"
+            className="text-white hover:text-primary transition-colors text-xl py-2 border-b border-white/10"
           >
             O nas
           </button>
           <button 
             onClick={() => scrollToSection('contact')} 
-            className="text-funeral-700 hover:text-primary transition-colors text-xl py-2 border-b border-funeral-100"
+            className="text-white hover:text-primary transition-colors text-xl py-2 border-b border-white/10"
           >
             Kontakt
           </button>
