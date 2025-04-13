@@ -16,8 +16,8 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{ 
-          backgroundImage: `url(${IMAGES.cemetery})`,
-          filter: 'brightness(0.25)',
+          backgroundImage: `url(${IMAGES.church})`,
+          filter: 'brightness(0.2)', // Darkened the image significantly
           transform: isVisible ? 'scale(1)' : 'scale(1.05)',
           transition: 'transform 0.5s ease-out, filter 0.5s ease-out'
         }}

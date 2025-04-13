@@ -17,6 +17,30 @@ const Index = () => {
     if (metaDescTag) {
       metaDescTag.setAttribute('content', "Kompleksowe usługi pogrzebowe w Łodzi. Organizacja pogrzebów, kremacja, przewóz zwłok. Wsparcie i pomoc 24/7 w trudnych chwilach. ☎ +48 123 456 789");
     }
+
+    // Add additional meta tags for better SEO
+    const metaTags = [
+      { name: 'keywords', content: 'usługi pogrzebowe, dom pogrzebowy łódź, kremacja, organizacja pogrzebu, nekrolog, pogrzeby, przewóz zwłok' },
+      { property: 'og:title', content: 'Nekrolog Łódź - Profesjonalne Usługi Pogrzebowe | Całodobowa Pomoc' },
+      { property: 'og:description', content: 'Kompleksowe usługi pogrzebowe w Łodzi. Organizacja pogrzebów, kremacja, przewóz zwłok. Wsparcie i pomoc 24/7 w trudnych chwilach.' },
+      { property: 'og:type', content: 'website' }
+    ];
+
+    metaTags.forEach(tag => {
+      const existingTag = document.querySelector(`meta[${tag.property ? 'property' : 'name'}="${tag.property || tag.name}"]`);
+      if (existingTag) {
+        existingTag.setAttribute('content', tag.content);
+      } else {
+        const newTag = document.createElement('meta');
+        if (tag.property) {
+          newTag.setAttribute('property', tag.property);
+        } else {
+          newTag.setAttribute('name', tag.name);
+        }
+        newTag.setAttribute('content', tag.content);
+        document.head.appendChild(newTag);
+      }
+    });
   }, []);
 
   return (
