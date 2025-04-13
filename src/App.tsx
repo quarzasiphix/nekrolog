@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import OrganizacjaPogrzebow from "./pages/services/OrganizacjaPogrzebow";
@@ -24,32 +25,34 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          
-          {/* Usługi routes */}
-          <Route path="/uslugi" element={<UslugiPogrzebowe />} />
-          <Route path="/uslugi/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
-          <Route path="/uslugi/oprawa-muzyczna" element={<OprawaMuzyczna />} />
-          <Route path="/uslugi/ekshumacja" element={<Ekshumacja />} />
-          <Route path="/uslugi/transport" element={<TransportZmarlych />} />
-          <Route path="/uslugi/krematorium" element={<Krematorium />} />
-          
-          {/* Asortyment routes */}
-          <Route path="/asortyment" element={<Asortyment />} />
-          <Route path="/asortyment/trumny" element={<Trumny />} />
-          <Route path="/asortyment/urny" element={<Urny />} />
-          <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
-          <Route path="/asortyment/odziez" element={<Odziez />} />
-          <Route path="/asortyment/wience" element={<Wience />} />
-          
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <HelmetProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            
+            {/* Usługi routes */}
+            <Route path="/uslugi" element={<UslugiPogrzebowe />} />
+            <Route path="/uslugi/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
+            <Route path="/uslugi/oprawa-muzyczna" element={<OprawaMuzyczna />} />
+            <Route path="/uslugi/ekshumacja" element={<Ekshumacja />} />
+            <Route path="/uslugi/transport" element={<TransportZmarlych />} />
+            <Route path="/uslugi/krematorium" element={<Krematorium />} />
+            
+            {/* Asortyment routes */}
+            <Route path="/asortyment" element={<Asortyment />} />
+            <Route path="/asortyment/trumny" element={<Trumny />} />
+            <Route path="/asortyment/urny" element={<Urny />} />
+            <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
+            <Route path="/asortyment/odziez" element={<Odziez />} />
+            <Route path="/asortyment/wience" element={<Wience />} />
+            
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
