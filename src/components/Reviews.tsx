@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface Review {
   author_name: string;
@@ -14,32 +15,46 @@ interface Review {
 const Reviews = () => {
   const [reviews, setReviews] = useState<Review[]>([
     {
-      author_name: "Anna Kowalska",
+      author_name: "Andrzej Czyżyk",
       rating: 5,
-      text: "Profesjonalna obsługa w trudnych chwilach. Pełne wsparcie i zrozumienie. Polecam z całego serca.",
+      text: "Wszystko zostało zorganizowane bardzo profesjonalnie i ze smakiem. Dziękujemy za każdą poradę i zaangażowanie. Bardzo ważna jest możliwość wykonania wszystkich formalności w jednym miejscu i w ciągu jednego dnia. Bardzo ważny jest też takt i spokój pani Jolanty - bezcenne.",
       profile_photo_url: "",
-      time: new Date().getTime() - 7 * 24 * 60 * 60 * 1000 // A week ago
+      time: new Date('2023-10-11').getTime()
     },
     {
-      author_name: "Jan Nowak",
+      author_name: "Joanna Kustosz",
       rating: 5,
-      text: "Bardzo kompetentna i empatyczna obsługa. W tak trudnym momencie można liczyć na pełne wsparcie i pomoc w organizacji ceremonii. Dziękuję.",
+      text: "Firma Pani Jolanty Kostowskiej pomogła w przygotowaniu uroczystości pogrzebowej mojego taty. Wszystko przebiegło sprawnie i z należytym szacunkiem. Pani Jolanta jest osobą, która wie jak rozmawiać z pogrążonymi w żałobie ludźmi. Dziękujemy!",
       profile_photo_url: "",
-      time: new Date().getTime() - 14 * 24 * 60 * 60 * 1000 // Two weeks ago
+      time: new Date('2023-10-04').getTime()
     },
     {
-      author_name: "Maria Wiśniewska",
+      author_name: "Oliwier Natorski",
       rating: 5,
-      text: "Pełen profesjonalizm i godne podejście do całej ceremonii. Wszystko przebiegło zgodnie z oczekiwaniami. Bardzo dziękuję za pomoc.",
+      text: "Serdecznie dziękuję Pani Jolancie i jej Zespołowi za pomoc w organizacji uroczystości pogrzebowej naszego Taty. W tych ciężkich chwilach mogliśmy liczyć na pełne wsparcie, organizację całości ceremonii w sposób godny i respektujący nasze życzenia. Jesteśmy bardzo wdzięczni za pomoc i wsparcie.",
       profile_photo_url: "",
-      time: new Date().getTime() - 30 * 24 * 60 * 60 * 1000 // A month ago
+      time: new Date('2023-09-21').getTime()
     },
     {
-      author_name: "Tomasz Dąbrowski",
-      rating: 4,
-      text: "Zakład pogrzebowy godny polecenia. Wszystko zostało zorganizowane szybko i sprawnie. Profesjonalne podejście.",
+      author_name: "Grzegorz Stefański",
+      rating: 5,
+      text: "Firmę prowadzi sympatyczna Pani Jolanta, która w tych trudnych chwilach służy pomocą. Ceny usług dla klienta są korzystne i nie wygórowane. Każdy klient traktowany jest indywidualnie, co w tej branży jest bardzo ważne. Polecam.",
       profile_photo_url: "",
-      time: new Date().getTime() - 45 * 24 * 60 * 60 * 1000 // 45 days ago
+      time: new Date('2023-06-13').getTime()
+    },
+    {
+      author_name: "Agnieszka Gumowska",
+      rating: 5,
+      text: "Usługa na najwyższym poziomie, bez żadnych zastrzeżeń, pomoc w ciężkiej sytuacji bezcenna.",
+      profile_photo_url: "",
+      time: new Date('2023-05-03').getTime()
+    },
+    {
+      author_name: "Janusz Szyjer",
+      rating: 5,
+      text: "Bardzo profesjonalna obsługa, wszystko zorganizowane w ekspresowym czasie. Polecam wszystkim ten zakład.",
+      profile_photo_url: "",
+      time: new Date('2022-10-29').getTime()
     }
   ]);
 
@@ -98,16 +113,16 @@ const Reviews = () => {
           <div className="flex items-center mb-4 md:mb-0">
             <div className="flex items-center">
               {renderStars(5)}
-              <span className="ml-2 text-white font-bold">4.8/5</span>
+              <span className="ml-2 text-white font-bold">5.0/5</span>
             </div>
             <span className="mx-3 text-gray-400">|</span>
             <div className="flex items-center">
-              <span className="text-gray-300">37 opinii w Google</span>
+              <span className="text-gray-300">94 opinii w Google</span>
             </div>
           </div>
           
           <a 
-            href="https://g.page/r/YOUR_GOOGLE_PAGE_ID/review" 
+            href="https://g.co/kgs/MhdWuLg" 
             target="_blank" 
             rel="noopener noreferrer"
             className="px-4 py-2 bg-white/10 text-white rounded-md hover:bg-white/20 transition-all duration-300 border border-white/20 text-sm"
@@ -116,34 +131,36 @@ const Reviews = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {reviews.map((review, index) => (
-            <Card key={index} className="bg-black/70 border border-primary/20 overflow-hidden hover:border-primary/40 transition-all duration-300">
-              <CardContent className="p-6 relative">
-                <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-3 overflow-hidden">
-                    {review.profile_photo_url ? (
-                      <img src={review.profile_photo_url} alt={review.author_name} className="w-full h-full object-cover" />
-                    ) : (
-                      <span className="text-white font-bold">{review.author_name.charAt(0)}</span>
-                    )}
+        <ScrollArea className="h-[450px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-1">
+            {reviews.map((review, index) => (
+              <Card key={index} className="bg-black/70 border border-primary/20 overflow-hidden hover:border-primary/40 transition-all duration-300">
+                <CardContent className="p-6 relative">
+                  <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-3 overflow-hidden">
+                      {review.profile_photo_url ? (
+                        <img src={review.profile_photo_url} alt={review.author_name} className="w-full h-full object-cover" />
+                      ) : (
+                        <span className="text-white font-bold">{review.author_name.charAt(0)}</span>
+                      )}
+                    </div>
+                    <div>
+                      <h3 className="text-white font-medium">{review.author_name}</h3>
+                      <div className="flex">{renderStars(review.rating)}</div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-white font-medium">{review.author_name}</h3>
-                    <div className="flex">{renderStars(review.rating)}</div>
-                  </div>
-                </div>
-                <p className="text-gray-300 mb-4 line-clamp-4">{review.text}</p>
-                <p className="text-gray-400 text-sm">{formatDate(review.time)}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  <p className="text-gray-300 mb-4 line-clamp-4">{review.text}</p>
+                  <p className="text-gray-400 text-sm">{formatDate(review.time)}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </ScrollArea>
 
         <div className="text-center mt-10">
           <a 
-            href="https://g.page/YOUR_GOOGLE_PAGE_ID" 
+            href="https://g.co/kgs/MhdWuLg" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-primary text-black rounded-md hover:bg-primary/90 transition-all duration-300 font-medium shadow-md hover:shadow-lg"
