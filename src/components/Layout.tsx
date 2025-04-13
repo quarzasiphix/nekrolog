@@ -24,14 +24,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="min-h-screen flex flex-col bg-black relative">
       {/* Cross Background */}
       <div 
-        className="fixed inset-0 bg-contain bg-center bg-no-repeat opacity-[0.05] pointer-events-none"
+        className="fixed inset-0 bg-contain bg-center bg-no-repeat opacity-[0.08] pointer-events-none"
         style={{ backgroundImage: `url(${IMAGES.cross})` }}
-      ></div>
-      
-      {/* Subtle candle overlay */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08] pointer-events-none"
-        style={{ backgroundImage: `url(${IMAGES.candles})` }}
       ></div>
       
       <Navbar />
@@ -44,3 +38,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 };
 
 export default Layout;
+
