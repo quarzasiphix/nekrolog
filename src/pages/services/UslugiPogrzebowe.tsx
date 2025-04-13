@@ -2,7 +2,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { IMAGES } from '../../assets/images';
-import { ArrowRight, Phone, Heart, Music, Truck, Flame, Flower } from 'lucide-react';
+import { ArrowRight, Phone, Heart, Music, Truck, Flame, Flower, Cross } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServiceItem = ({ 
@@ -56,7 +56,7 @@ const UslugiPogrzebowe = () => {
     // Set meta description
     const metaDescTag = document.querySelector('meta[name="description"]');
     if (metaDescTag) {
-      metaDescTag.setAttribute('content', "Kompleksowe usługi pogrzebowe w Łodzi. Organizacja pogrzebów, kremacja, transport zmarłych, ekshumacja, oprawa muzyczna. Wsparcie 24/7. ☎ +48 123 456 789");
+      metaDescTag.setAttribute('content', "Kompleksowe usługi pogrzebowe w Łodzi. Organizacja pogrzebów, kremacja, transport zmarłych, ekshumacja, oprawa muzyczna. Wsparcie 24/7. ☎ +48 602 274 661");
     }
     
     // Set meta keywords
@@ -95,7 +95,7 @@ const UslugiPogrzebowe = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a 
-                href="tel:+48123456789" 
+                href="tel:+48602274661" 
                 className="px-6 py-3 bg-primary text-black rounded-md hover:bg-primary/90 transition-all duration-300 font-medium shadow-md hover:shadow-lg flex items-center gap-2"
               >
                 <Phone className="h-5 w-5" /> Całodobowa pomoc
@@ -106,7 +106,7 @@ const UslugiPogrzebowe = () => {
       </section>
       
       {/* Breadcrumb */}
-      <div className="bg-black/80 border-y border-white/10 py-3">
+      <div className="breadcrumb-bar">
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-400">
             <Link to="/" className="hover:text-primary transition-colors">Strona Główna</Link>
@@ -176,10 +176,10 @@ const UslugiPogrzebowe = () => {
                 Skontaktuj się z nami, aby omówić szczegóły usługi lub uzyskać więcej informacji.
               </p>
               <a 
-                href="tel:+48123456789" 
+                href="tel:+48602274661" 
                 className="px-6 py-3 bg-primary text-black rounded-md hover:bg-primary/90 transition-all duration-300 font-medium shadow-md hover:shadow-lg flex items-center gap-2"
               >
-                <Phone className="h-5 w-5" /> +48 123 456 789
+                <Phone className="h-5 w-5" /> +48 602 274 661
               </a>
             </div>
           </div>
@@ -218,7 +218,7 @@ const UslugiPogrzebowe = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-primary/10 rounded-tr-3xl rounded-bl-3xl -z-10"></div>
                 <img 
-                  src={IMAGES.candles} 
+                  src={IMAGES.cross} 
                   alt="Dom pogrzebowy Nekrolog Łódź" 
                   className="w-full h-auto rounded-md shadow-lg object-cover"
                 />
@@ -241,10 +241,10 @@ const UslugiPogrzebowe = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
-                href="tel:+48123456789" 
+                href="tel:+48602274661" 
                 className="px-8 py-4 bg-primary text-black rounded-md hover:bg-primary/90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl flex items-center gap-2 w-full sm:w-auto justify-center"
               >
-                <Phone className="h-5 w-5" /> Zadzwoń teraz: +48 123 456 789
+                <Phone className="h-5 w-5" /> Zadzwoń teraz: +48 602 274 661
               </a>
               <Link 
                 to="/kontakt" 

@@ -17,6 +17,7 @@ import Trumny from "./pages/asortyment/Trumny";
 import Urny from "./pages/asortyment/Urny";
 import Wiazanki from "./pages/asortyment/Wiazanki";
 import Odziez from "./pages/asortyment/Odziez";
+import Wience from "./pages/asortyment/Wience";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/asortyment/urny" element={<Urny />} />
           <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
           <Route path="/asortyment/odziez" element={<Odziez />} />
+          <Route path="/asortyment/wience" element={<Wience />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -10,7 +10,7 @@ const OprawaMuzyczna = () => {
       title="Oprawa Muzyczna Pogrzebu Łódź"
       description="Profesjonalna oprawa muzyczna ceremonii pogrzebowej, która doda uroczystości wyjątkowego, podniosłego charakteru."
       backgroundImage={IMAGES.services.music}
-      metaDescription="Profesjonalna oprawa muzyczna pogrzebu w Łodzi. Instrumenty, wokaliści, organy, trąbka. Muzyka dostosowana do charakteru uroczystości. ☎ +48 123 456 789"
+      metaDescription="Profesjonalna oprawa muzyczna pogrzebu w Łodzi. Instrumenty, wokaliści, organy, trąbka. Muzyka dostosowana do charakteru uroczystości. ☎ +48 602 274 661"
       metaKeywords="oprawa muzyczna pogrzebu, muzyka na pogrzeb, organista pogrzeb, śpiew na pogrzeb, trąbka na pogrzeb, łódź"
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
@@ -146,7 +146,7 @@ const OprawaMuzyczna = () => {
             <img 
               src={IMAGES.subpages.oprawa} 
               alt="Oprawa muzyczna pogrzebu Łódź" 
-              className="w-full h-auto rounded-lg mb-8 shadow-lg"
+              className="w-full h-auto rounded-lg mb-4 shadow-lg"
             />
             
             <p className="text-gray-300 italic text-center">
@@ -156,7 +156,7 @@ const OprawaMuzyczna = () => {
         </div>
         
         <div className="lg:col-span-1">
-          <div className="glass-card p-6 rounded-xl mb-8">
+          <div className="glass-card p-6 rounded-xl mb-8 sticky top-24">
             <h3 className="text-xl font-playfair font-medium text-white mb-4">
               Dlaczego oprawa muzyczna jest ważna?
             </h3>
@@ -236,10 +236,10 @@ const OprawaMuzyczna = () => {
             </p>
             
             <a 
-              href="tel:+48123456789" 
+              href="tel:+48602274661" 
               className="w-full px-6 py-4 bg-primary text-black rounded-md hover:bg-primary/90 transition-all duration-300 font-medium flex items-center justify-center gap-2 mb-4"
             >
-              <Phone className="h-5 w-5" /> +48 123 456 789
+              <Phone className="h-5 w-5" /> +48 602 274 661
             </a>
             
             <p className="text-center text-gray-400 text-sm">

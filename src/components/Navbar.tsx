@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Clock, ChevronDown, ChevronRight } from 'lucide-react';
-import { LetterN } from './icons/LetterN';  // Import the new icon
 import { IMAGES } from '../assets/images';
 import {
   NavigationMenu,
@@ -93,19 +92,17 @@ const Navbar = () => {
       setActiveSubmenu(null);
     }
   };
-
+  
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black shadow-md' : 'bg-black/95'}`}>
       <div className="container mx-auto px-4 py-4 md:py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <LetterN 
-            size={32} 
-            className="text-primary" 
-            strokeWidth={2.5} 
-          />
-          <h1 className="text-xl md:text-2xl font-playfair font-bold text-white hidden sm:block">
-            <span className="text-primary">Nekrolog</span> Łódź
-          </h1>
+          <div className="flex items-center">
+            <h1 className="text-xl md:text-2xl font-playfair font-bold text-white">
+              <span className="text-primary">Nekrolog</span> Łódź
+            </h1>
+            <p className="text-white/70 text-xs md:text-sm ml-2 italic">Jolanta Kostowska</p>
+          </div>
         </Link>
         
         {/* Desktop Navigation */}
@@ -121,7 +118,7 @@ const Navbar = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-transparent focus:bg-transparent px-3 py-2">
+                <NavigationMenuTrigger className="bg-transparent text-white data-[state=open]:text-primary hover:text-primary/90 hover:bg-transparent focus:bg-transparent px-3 py-2">
                   Usługi
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-black border border-primary/20">
@@ -148,7 +145,7 @@ const Navbar = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-transparent focus:bg-transparent px-3 py-2">
+                <NavigationMenuTrigger className="bg-transparent text-white data-[state=open]:text-primary hover:text-primary/90 hover:bg-transparent focus:bg-transparent px-3 py-2">
                   Asortyment
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-black border border-primary/20">
@@ -187,9 +184,9 @@ const Navbar = () => {
         
         {/* Phone number */}
         <div className="hidden md:flex flex-col items-end">
-          <a href="tel:+48123456789" className="flex items-center text-primary hover:text-primary/80 transition-colors">
+          <a href="tel:+48602274661" className="flex items-center text-primary hover:text-primary/80 transition-colors">
             <Phone className="w-5 h-5 mr-2" />
-            <span className="font-medium">+48 123 456 789</span>
+            <span className="font-medium">+48 602 274 661</span>
           </a>
           <div className="flex items-center text-gray-400 text-sm mt-1">
             <Clock className="w-4 h-4 mr-1" />
@@ -285,9 +282,9 @@ const Navbar = () => {
             Kontakt
           </button>
           
-          <a href="tel:+48123456789" className="flex items-center justify-center text-primary mt-6 py-4 border border-primary rounded-md">
+          <a href="tel:+48602274661" className="flex items-center justify-center text-primary mt-6 py-4 border border-primary rounded-md">
             <Phone className="w-5 h-5 mr-2" />
-            <span className="font-medium">Całodobowo: +48 123 456 789</span>
+            <span className="font-medium">Całodobowo: +48 602 274 661</span>
           </a>
 
           <div className="mt-8 glass-card p-4 rounded-lg text-center">

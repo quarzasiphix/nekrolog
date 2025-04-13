@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Heart, Cross } from 'lucide-react';
 import { IMAGES } from '../assets/images';
 
 const Footer = () => {
@@ -37,7 +37,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Phone className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1" />
-                <span className="text-gray-300">+48 123 456 789 (całodobowo)</span>
+                <span className="text-gray-300">+48 602 274 661 (całodobowo)</span>
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1" />
@@ -77,7 +77,7 @@ const Footer = () => {
             <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
               <p className="text-sm text-gray-400">
                 <span className="font-medium text-primary">Całodobowy kontakt:</span><br />
-                +48 123 456 789
+                +48 602 274 661
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-gray-500 text-sm flex items-center justify-center">
             &copy; {currentYear} Nekrolog Łódź - Usługi Pogrzebowe Jolanta Kostowska. Wszelkie prawa zastrzeżone.
-            <Heart className="w-3 h-3 mx-1 text-primary" />
+            <Cross className="w-3 h-3 mx-1 text-primary" />
           </p>
         </div>
       </div>

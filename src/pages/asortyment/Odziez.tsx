@@ -3,72 +3,73 @@ import React from 'react';
 import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
 import { Card, CardContent } from "@/components/ui/card";
-import { Shirt, CheckCircle } from 'lucide-react';
+import { CheckCircle, Package } from 'lucide-react';
 
 const Odziez = () => {
-  const clothing = [
+  const odziezTypes = [
     {
       name: "Garnitury pogrzebowe męskie",
-      description: "Eleganckie garnitury w ciemnych kolorach, odpowiednie na uroczystości pogrzebowe, dostępne w różnych rozmiarach.",
-      features: ["Klasyczny krój", "Wysokiej jakości materiały", "Dostępne różne rozmiary"]
+      description: "Eleganckie garnitury pogrzebowe w stonowanych kolorach, idealnie nadające się do ostatniego pożegnania bliskiej osoby.",
+      features: ["Klasyczny krój", "Wysoka jakość tkanin", "Dostępne różne rozmiary"]
     },
     {
-      name: "Suknie i kostiumy żałobne damskie",
-      description: "Eleganckie stroje żałobne dla kobiet, wykonane z wysokiej jakości materiałów, dostępne w różnych fasonach i rozmiarach.",
-      features: ["Stonowane kolory", "Elegancki krój", "Wygodny materiał"]
+      name: "Suknie i garsonki żałobne",
+      description: "Suknie i garsonki w kolorze czarnym, granatowym i szarym, wykonane z wysokiej jakości materiałów, idealne na ceremonię pogrzebową.",
+      features: ["Elegancki wygląd", "Komfortowy krój", "Różne rozmiary"]
     },
     {
-      name: "Koszule pogrzebowe",
-      description: "Klasyczne koszule w białym lub czarnym kolorze, idealne na ceremonię pogrzebową.",
-      features: ["Prosty krój", "Łatwe w pielęgnacji", "Różne rozmiary"]
+      name: "Koszule męskie",
+      description: "Białe i czarne koszule męskie o klasycznym kroju, wykonane z wysokiej jakości tkanin, idealne do garnituru pogrzebowego.",
+      features: ["100% bawełna", "Łatwe w prasowaniu", "Dostępne różne rozmiary"]
     },
     {
-      name: "Krawaty i muszki żałobne",
-      description: "Czarne krawaty i muszki, dopełniające elegancki strój pogrzebowy.",
-      features: ["Klasyczny wygląd", "Głęboka czerń", "Łatwe wiązanie"]
+      name: "Bluzki damskie",
+      description: "Eleganckie bluzki damskie w stonowanych kolorach, idealne na uroczystości pogrzebowe, wykonane z delikatnych materiałów.",
+      features: ["Stonowane kolory", "Elegancki krój", "Różne rozmiary"]
     },
     {
       name: "Dodatki żałobne",
-      description: "Dodatki takie jak chusty, szale, rękawiczki i inne akcesoria odpowiednie na uroczystości pogrzebowe.",
-      features: ["Stonowana elegancja", "Wysokiej jakości wykonanie", "Uniwersalne dodatki"]
+      description: "Różnego rodzaju dodatki żałobne, takie jak krawaty, poszetki, szale i rękawiczki, które uzupełnią strój pogrzebowy.",
+      features: ["Czarne dodatki", "Stonowane wzory", "Uniwersalne"]
     },
     {
-      name: "Odzież dla zmarłych",
-      description: "Specjalna odzież przygotowana z myślą o godnym pożegnaniu zmarłych osób, dostępna w różnych rozmiarach.",
-      features: ["Godna prezentacja", "Wysokiej jakości materiały", "Delikatne wykończenia"]
+      name: "Obuwie żałobne",
+      description: "Klasyczne, czarne obuwie męskie i damskie, które dopełni stylizację pogrzebową i zapewni komfort podczas ceremonii.",
+      features: ["Wygodne obuwie", "Elegancki wygląd", "Różne rozmiary"]
     }
   ];
 
   return (
     <ServiceLayout
-      title="Odzież pogrzebowa"
-      description="Szeroki wybór odzieży żałobnej oraz dodatków dla uczestników ceremonii"
-      backgroundImage={IMAGES.cross}
-      metaDescription="Odzież pogrzebowa, garnitury, suknie żałobne, dodatki. Stroje na pogrzeb dla uczestników ceremonii. Dom pogrzebowy w Łodzi. ☎ +48 123 456 789"
-      metaKeywords="odzież pogrzebowa łódź, garnitury na pogrzeb, suknie żałobne, ubrania na pogrzeb łódź"
+      title="Odzież Pogrzebowa"
+      description="Szeroki wybór odzieży żałobnej - garnitury, suknie, dodatki i obuwie pogrzebowe"
+      backgroundImage={IMAGES.interior}
+      metaDescription="Odzież pogrzebowa - garnitury, suknie żałobne, dodatki. Elegancka odzież na ceremonię pogrzebową. Dom pogrzebowy w Łodzi. ☎ +48 602 274 661"
+      metaKeywords="odzież pogrzebowa łódź, garnitur pogrzebowy, suknia żałobna, dodatki żałobne"
     >
       <div className="container mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-playfair font-semibold text-white mb-4">
-            Odzież pogrzebowa
+            Odzież Pogrzebowa
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto">
-            Oferujemy szeroki wybór odzieży pogrzebowej i żałobnej, zapewniającej odpowiedni 
-            wygląd podczas ceremonii pogrzebowych. Nasza odzież łączy elegancję z komfortem.
+            Oferujemy szeroki wybór eleganckiej odzieży pogrzebowej dla kobiet i mężczyzn. 
+            Wszystkie nasze produkty charakteryzują się wysoką jakością wykonania i 
+            stonowaną elegancją, odpowiednią na uroczystości pogrzebowe.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {clothing.map((item, index) => (
+          {odziezTypes.map((odziezType, index) => (
             <Card key={index} className="bg-black/40 border border-gray-800 hover:border-primary/50 transition-all duration-300">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <Shirt className="h-6 w-6 text-primary mr-3" />
-                  <h3 className="text-xl font-playfair text-white">{item.name}</h3>
+                  <Package className="h-6 w-6 text-primary mr-3" />
+                  <h3 className="text-xl font-playfair text-white">{odziezType.name}</h3>
                 </div>
-                <p className="text-gray-300 mb-4">{item.description}</p>
+                <p className="text-gray-300 mb-4">{odziezType.description}</p>
                 <div className="space-y-2">
-                  {item.features.map((feature, idx) => (
+                  {odziezType.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-primary/80 mr-2 mt-0.5" />
                       <p className="text-gray-400">{feature}</p>
@@ -78,32 +79,6 @@ const Odziez = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-12 mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="aspect-w-16 aspect-h-9">
-              <img 
-                src={IMAGES.subpages.odziez} 
-                alt="Odzież pogrzebowa - zdjęcie 1" 
-                className="w-full h-64 object-cover rounded-lg shadow-md"
-              />
-            </div>
-            <div className="aspect-w-16 aspect-h-9">
-              <img 
-                src={IMAGES.cemetery} 
-                alt="Odzież pogrzebowa - zdjęcie 2" 
-                className="w-full h-64 object-cover rounded-lg shadow-md"
-              />
-            </div>
-            <div className="aspect-w-16 aspect-h-9">
-              <img 
-                src={IMAGES.interior} 
-                alt="Odzież pogrzebowa - zdjęcie 3" 
-                className="w-full h-64 object-cover rounded-lg shadow-md"
-              />
-            </div>
-          </div>
         </div>
 
         <div className="mt-16">

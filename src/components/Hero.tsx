@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { IMAGES } from '../assets/images';
-import { Phone } from 'lucide-react';
+import { Phone, Cross } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +56,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-300 delay-200 transform">
             <a 
-              href="tel:+48123456789" 
+              href="tel:+48602274661" 
               className="px-8 py-4 bg-primary text-black rounded-md hover:bg-primary/90 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl flex items-center gap-2"
             >
               <Phone className="h-5 w-5" /> Całodobowa pomoc
@@ -95,10 +95,10 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Candle Decorative Element */}
+      {/* Cross Decorative Element */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-        <div className="w-14 h-24 bg-contain bg-no-repeat bg-center mx-3 candle-glow" 
-             style={{ backgroundImage: `url(${IMAGES.candles})` }}>
+        <div className="flex items-center justify-center mx-3">
+          <Cross className="h-14 w-14 text-primary cross-glow" />
         </div>
       </div>
     </section>
