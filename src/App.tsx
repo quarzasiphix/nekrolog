@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import OrganizacjaPogrzebow from "./pages/services/OrganizacjaPogrzebow";
 import OprawaMuzyczna from "./pages/services/OprawaMuzyczna";
 import UslugiPogrzebowe from "./pages/services/UslugiPogrzebowe";
+import Ekshumacja from "./pages/services/Ekshumacja";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/uslugi" element={<UslugiPogrzebowe />} />
           <Route path="/uslugi/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
           <Route path="/uslugi/oprawa-muzyczna" element={<OprawaMuzyczna />} />
+          <Route path="/uslugi/ekshumacja" element={<Ekshumacja />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
