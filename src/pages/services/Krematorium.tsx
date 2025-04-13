@@ -1,8 +1,7 @@
-
 import React from 'react';
 import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
-import { CheckCircle, Flame, Clock, Urn, FileText } from 'lucide-react';
+import { CheckCircle, Flame, Clock, Coffee, FileText } from 'lucide-react';
 
 const Krematorium = () => {
   return (
@@ -101,7 +100,7 @@ const Krematorium = () => {
             
             <div className="flex items-start">
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4 flex-shrink-0">
-                <Urn className="w-5 h-5 text-primary" />
+                <Coffee className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <h4 className="text-lg font-medium text-white">Wybór urny</h4>

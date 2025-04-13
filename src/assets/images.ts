@@ -19,6 +19,9 @@ export const IMAGES = {
     organizacja: "/lovable-uploads/43403de6-52a6-4358-9243-c48a5cf08fdb.png",
     oprawa: "/lovable-uploads/10748b32-d109-4ba1-b840-8ec65c7410eb.png",
     transport: "/lovable-uploads/56253cbb-d98a-4693-b7f6-a518b3526376.png",
-    krematorium: "/lovable-uploads/c4f32f6e-8b8d-4c33-82e7-64b4d89a4051.png"
+    krematorium: "/lovable-uploads/c4f32f6e-8b8d-4c33-82e7-64b4d89a4051.png",
+    trumny: "https://images.unsplash.com/photo-1594743896161-be4194518a17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    urny: "https://images.unsplash.com/photo-1593037515900-2e89e67a9af9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    wiazanki: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
   }
 };
