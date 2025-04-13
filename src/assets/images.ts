@@ -9,5 +9,6 @@ export const IMAGES = {
     transport: "https://images.unsplash.com/photo-1548677863-29a95160d84?ixlib=rb-1.2.1&auto=format&fit=crop&w=3011&q=80",
     cremation: "https://images.unsplash.com/photo-1548677863-29a95160d84?ixlib=rb-1.2.1&auto=format&fit=crop&w=3011&q=80",
     exhumation: "https://images.unsplash.com/photo-1548677863-29a95160d84?ixlib=rb-1.2.1&auto=format&fit=crop&w=3011&q=80"
-  }
+  },
+  logo: "public/lovable-uploads/2f5ab925-ad45-40f7-bae2-79a26e3b10ac.png"
 };

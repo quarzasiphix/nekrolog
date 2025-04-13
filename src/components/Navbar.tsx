@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Clock } from 'lucide-react';
+import { IMAGES } from '../assets/images';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,12 +43,16 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#000000e6] backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <h1 className="text-2xl font-playfair font-bold text-white">
-            <span className="text-primary">Nekrolog</span> Łódź
-          </h1>
+          {isScrolled ? (
+            <img src={IMAGES.logo} alt="Nekrolog Łódź" className="h-12" />
+          ) : (
+            <h1 className="text-2xl font-playfair font-bold text-white">
+              <span className="text-primary">Nekrolog</span> Łódź
+            </h1>
+          )}
         </div>
         
         {/* Desktop Navigation */}
@@ -79,10 +84,16 @@ const Navbar = () => {
         </nav>
         
         {/* Phone number */}
-        <a href="tel:+48123456789" className="hidden md:flex items-center text-primary hover:text-primary/80 transition-colors">
-          <Phone className="w-5 h-5 mr-2" />
-          <span className="font-medium">Całodobowo: +48 123 456 789</span>
-        </a>
+        <div className="hidden md:flex flex-col items-end">
+          <a href="tel:+48123456789" className="flex items-center text-primary hover:text-primary/80 transition-colors">
+            <Phone className="w-5 h-5 mr-2" />
+            <span className="font-medium">+48 123 456 789</span>
+          </a>
+          <div className="flex items-center text-gray-400 text-sm mt-1">
+            <Clock className="w-4 h-4 mr-1" />
+            <span>Dostępni 24/7</span>
+          </div>
+        </div>
         
         {/* Mobile Menu Button */}
         <button className="md:hidden text-white" onClick={toggleMenu}>
@@ -91,7 +102,7 @@ const Navbar = () => {
       </div>
       
       {/* Mobile Navigation */}
-      <div className={`md:hidden fixed inset-0 top-16 bg-[#000000e6] z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`md:hidden fixed inset-0 top-16 bg-black/95 z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col p-6 space-y-6">
           <button 
             onClick={() => scrollToSection('home')} 

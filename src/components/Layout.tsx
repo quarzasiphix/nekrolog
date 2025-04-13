@@ -21,11 +21,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FEF7CD]/10 relative">
-      {/* Subtle Cross Background */}
+    <div className="min-h-screen flex flex-col bg-black relative">
+      {/* Cross Background */}
       <div 
-        className="fixed inset-0 bg-contain bg-center bg-no-repeat opacity-[0.03] pointer-events-none"
+        className="fixed inset-0 bg-contain bg-center bg-no-repeat opacity-[0.05] pointer-events-none"
         style={{ backgroundImage: `url(${IMAGES.cross})` }}
+      ></div>
+      
+      {/* Subtle candle overlay */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08] pointer-events-none"
+        style={{ backgroundImage: `url(${IMAGES.candles})` }}
       ></div>
       
       <Navbar />

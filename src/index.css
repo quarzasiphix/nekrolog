@@ -7,44 +7,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 10%;
+    --background: 0 0% 12%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 48 100% 50%;
+    --primary: 43 100% 50%;
     --primary-foreground: 0 0% 10%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 48 95% 92%;
+    --accent: 43 100% 50%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 48 100% 50%;
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 43 100% 50%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 26.1%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 95.9%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 91%;
-    --sidebar-ring: 48 100% 50%;
   }
 }
 
@@ -66,7 +57,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-[#000000e6] backdrop-blur-sm border border-[#FEF7CD]/20 shadow-sm text-white;
+    @apply bg-black/90 backdrop-blur-sm border border-primary/30 shadow-md text-white;
   }
   
   .section-container {
@@ -74,11 +65,11 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-semibold mb-6 text-[#000000];
+    @apply text-3xl md:text-4xl font-semibold mb-6 text-white;
   }
   
   .section-subtitle {
-    @apply text-xl md:text-2xl mb-10 text-[#000000cc] max-w-3xl mx-auto;
+    @apply text-xl md:text-2xl mb-10 text-gray-300 max-w-3xl mx-auto;
   }
 
   .page-transition {
@@ -95,8 +86,8 @@
   }
   
   .button-secondary {
-    @apply px-6 py-3 bg-[#000000cc] text-white rounded-md font-medium
-    hover:bg-black/80 transition-all duration-300 shadow-sm hover:shadow;
+    @apply px-6 py-3 bg-white/10 text-white rounded-md font-medium
+    hover:bg-white/20 transition-all duration-300 shadow-sm hover:shadow border border-white/20;
   }
 
   .candle-glow {
@@ -106,5 +97,13 @@
   .candle-glow::after {
     content: '';
     @apply absolute inset-0 bg-primary/20 blur-2xl -z-10 rounded-full opacity-70;
+  }
+  
+  .divider {
+    @apply w-full h-px bg-primary/30 my-8;
+  }
+  
+  .feature-card {
+    @apply bg-black/60 p-6 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300;
   }
 }
