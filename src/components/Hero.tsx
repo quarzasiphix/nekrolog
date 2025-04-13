@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { IMAGES } from '../assets/images';
 import { Phone } from 'lucide-react';
@@ -15,8 +16,8 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{ 
-          backgroundImage: `url(${IMAGES.hero})`,
-          filter: 'brightness(0.2)',
+          backgroundImage: `url(${IMAGES.cemetery})`,
+          filter: 'brightness(0.25)',
           transform: isVisible ? 'scale(1)' : 'scale(1.05)',
           transition: 'transform 0.5s ease-out, filter 0.5s ease-out'
         }}

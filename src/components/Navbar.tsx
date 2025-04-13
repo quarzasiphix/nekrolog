@@ -18,25 +18,26 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 // Services submenu items
 const servicesItems = [
-  { name: "Usługi Pogrzebowe Łódź", id: "services" },
-  { name: "Organizacja pogrzebów Łódź", id: "services" },
-  { name: "Oprawa muzyczna pogrzebu Łódź", id: "services" },
-  { name: "Ekshumacja zwłok Łódź", id: "services" },
-  { name: "Transport zmarłych Łódź", id: "services" },
-  { name: "Krematorium Łódź", id: "services" }
+  { name: "Usługi Pogrzebowe Łódź", id: "services", path: "/uslugi" },
+  { name: "Organizacja pogrzebów Łódź", id: "services", path: "/uslugi/organizacja-pogrzebow" },
+  { name: "Oprawa muzyczna pogrzebu Łódź", id: "services", path: "/uslugi/oprawa-muzyczna" },
+  { name: "Ekshumacja zwłok Łódź", id: "services", path: "/uslugi/ekshumacja" },
+  { name: "Transport zmarłych Łódź", id: "services", path: "/uslugi/transport" },
+  { name: "Krematorium Łódź", id: "services", path: "/uslugi/krematorium" }
 ];
 
 // Products submenu items
 const productsItems = [
-  { name: "Asortyment", id: "products" },
-  { name: "Trumny Łódź", id: "products" },
-  { name: "Urny Łódź", id: "products" },
-  { name: "Wiązanki pogrzebowe Łódź", id: "products" },
-  { name: "Wieńce pogrzebowe Łódź", id: "products" },
-  { name: "Odzież pogrzebowa Łódź", id: "products" }
+  { name: "Asortyment", id: "products", path: "/asortyment" },
+  { name: "Trumny Łódź", id: "products", path: "/asortyment/trumny" },
+  { name: "Urny Łódź", id: "products", path: "/asortyment/urny" },
+  { name: "Wiązanki pogrzebowe Łódź", id: "products", path: "/asortyment/wiazanki" },
+  { name: "Wieńce pogrzebowe Łódź", id: "products", path: "/asortyment/wience" },
+  { name: "Odzież pogrzebowa Łódź", id: "products", path: "/asortyment/odziez" }
 ];
 
 const Navbar = () => {
@@ -71,6 +72,12 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    // If we're on a page that's not home, navigate to home first
+    if (window.location.pathname !== '/') {
+      window.location.href = '/#' + id;
+      return;
+    }
+    
     const element = document.getElementById(id);
     if (element) {
       const yOffset = -80; // Navbar height
@@ -87,19 +94,20 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black shadow-md' : 'bg-black'}`}>
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <h1 className="text-2xl font-playfair font-bold text-white">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black shadow-md' : 'bg-black/95'}`}>
+      <div className="container mx-auto px-4 py-4 md:py-3 flex items-center justify-between">
+        <Link to="/" className="flex items-center space-x-2">
+          <img src={IMAGES.logo} alt="Nekrolog Łódź" className="h-10 md:h-12" />
+          <h1 className="text-xl md:text-2xl font-playfair font-bold text-white hidden sm:block">
             <span className="text-primary">Nekrolog</span> Łódź
           </h1>
-        </div>
+        </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <button 
             onClick={() => scrollToSection('home')} 
-            className="text-white hover:text-primary transition-colors"
+            className="text-white hover:text-primary transition-colors py-2"
           >
             Strona Główna
           </button>
@@ -108,7 +116,7 @@ const Navbar = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-transparent focus:bg-transparent">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-transparent focus:bg-transparent px-3 py-2">
                   Usługi
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-black border border-primary/20">
@@ -116,12 +124,12 @@ const Navbar = () => {
                     {servicesItems.map((item) => (
                       <li key={item.name}>
                         <NavigationMenuLink asChild>
-                          <button
-                            onClick={() => scrollToSection(item.id)}
+                          <Link
+                            to={item.path}
                             className="w-full text-left block select-none space-y-1 rounded-md p-3 text-white hover:bg-primary/10 hover:text-primary"
                           >
                             <div>{item.name}</div>
-                          </button>
+                          </Link>
                         </NavigationMenuLink>
                       </li>
                     ))}
@@ -135,7 +143,7 @@ const Navbar = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-transparent focus:bg-transparent">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-transparent focus:bg-transparent px-3 py-2">
                   Asortyment
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-black border border-primary/20">
@@ -143,12 +151,12 @@ const Navbar = () => {
                     {productsItems.map((item) => (
                       <li key={item.name}>
                         <NavigationMenuLink asChild>
-                          <button
-                            onClick={() => scrollToSection(item.id)}
+                          <Link
+                            to={item.path}
                             className="w-full text-left block select-none space-y-1 rounded-md p-3 text-white hover:bg-primary/10 hover:text-primary"
                           >
                             <div>{item.name}</div>
-                          </button>
+                          </Link>
                         </NavigationMenuLink>
                       </li>
                     ))}
@@ -160,13 +168,13 @@ const Navbar = () => {
 
           <button 
             onClick={() => scrollToSection('about')} 
-            className="text-white hover:text-primary transition-colors"
+            className="text-white hover:text-primary transition-colors py-2"
           >
             O nas
           </button>
           <button 
             onClick={() => scrollToSection('contact')} 
-            className="text-white hover:text-primary transition-colors"
+            className="text-white hover:text-primary transition-colors py-2"
           >
             Kontakt
           </button>
@@ -185,7 +193,7 @@ const Navbar = () => {
         </div>
         
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-white" onClick={toggleMenu}>
+        <button className="md:hidden text-white p-2" onClick={toggleMenu}>
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
@@ -219,14 +227,14 @@ const Navbar = () => {
             {activeSubmenu === 'services' && (
               <div className="pl-4 pb-2 space-y-2">
                 {servicesItems.map((item) => (
-                  <button 
+                  <Link 
                     key={item.name}
-                    onClick={() => scrollToSection(item.id)}
+                    to={item.path}
                     className="text-gray-300 hover:text-primary transition-colors text-lg py-2 w-full text-left flex items-center"
                   >
                     <ChevronRight className="w-4 h-4 mr-2" />
                     <span>{item.name}</span>
-                  </button>
+                  </Link>
                 ))}
               </div>
             )}
@@ -245,14 +253,14 @@ const Navbar = () => {
             {activeSubmenu === 'products' && (
               <div className="pl-4 pb-2 space-y-2">
                 {productsItems.map((item) => (
-                  <button 
+                  <Link 
                     key={item.name}
-                    onClick={() => scrollToSection(item.id)}
+                    to={item.path}
                     className="text-gray-300 hover:text-primary transition-colors text-lg py-2 w-full text-left flex items-center"
                   >
                     <ChevronRight className="w-4 h-4 mr-2" />
                     <span>{item.name}</span>
-                  </button>
+                  </Link>
                 ))}
               </div>
             )}
