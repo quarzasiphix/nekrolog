@@ -17,7 +17,7 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{ 
           backgroundImage: `url(${IMAGES.church})`,
-          filter: 'brightness(0.2)', // Darkened the image significantly
+          filter: 'brightness(0.2)', 
           transform: isVisible ? 'scale(1)' : 'scale(1.05)',
           transition: 'transform 0.5s ease-out, filter 0.5s ease-out'
         }}
@@ -52,6 +52,9 @@ const Hero = () => {
           <div className={`w-24 h-1 bg-primary mx-auto mb-8 transition-all duration-300 delay-100 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 font-light transition-all duration-300 delay-150 transform leading-relaxed text-gray-300">
             Profesjonalne wsparcie dla rodziny w trudnych chwilach <br />dostępne 24 godziny na dobę
+          </p>
+          <p className="text-lg max-w-3xl mx-auto mb-10 font-medium text-gray-200">
+            Pamięci Śp. Jolanty Kostowskiej
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-300 delay-200 transform">
