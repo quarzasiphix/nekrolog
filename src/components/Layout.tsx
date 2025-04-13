@@ -12,10 +12,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Reduced loading time for faster experience
+    // Reduced loading time even more for faster experience
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 300);
+    }, 100); // Reduced from 300ms to 100ms
     
     return () => clearTimeout(timer);
   }, []);
@@ -35,7 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       ></div>
       
       <Navbar />
-      <main className={`flex-grow transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <main className={`flex-grow transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}> {/* Reduced from 500ms to 300ms */}
         {children}
       </main>
       <Footer />

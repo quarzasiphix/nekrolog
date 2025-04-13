@@ -18,7 +18,7 @@ const About = () => {
           }
         });
       },
-      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
     );
     
     if (sectionRef.current) {
@@ -45,7 +45,7 @@ const About = () => {
       <div className="section-container">
         <div 
           ref={sectionRef}
-          className="opacity-0 translate-y-10 transition-all duration-500 text-center mb-16"
+          className="opacity-0 translate-y-10 transition-all duration-300 text-center mb-16"
         >
           <h2 className="section-title">O Naszym Zakładzie Pogrzebowym</h2>
           <p className="section-subtitle">
@@ -56,7 +56,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div 
             ref={imageRef}
-            className="opacity-0 translate-y-10 transition-all duration-500 delay-100"
+            className="opacity-0 translate-y-10 transition-all duration-300 delay-50"
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-tr-3xl rounded-bl-3xl -z-10"></div>
@@ -76,7 +76,7 @@ const About = () => {
           
           <div 
             ref={contentRef}
-            className="opacity-0 translate-y-10 transition-all duration-500 delay-200 flex flex-col space-y-6"
+            className="opacity-0 translate-y-10 transition-all duration-300 delay-100 flex flex-col space-y-6"
           >
             <h3 className="text-2xl font-playfair font-medium text-white">
               Wsparcie dla Rodziny w Trudnych Chwilach

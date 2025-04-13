@@ -22,12 +22,12 @@ const ContactCard = ({
             setTimeout(() => {
               entry.target.classList.add('opacity-100', 'translate-y-0');
               entry.target.classList.remove('opacity-0', 'translate-y-10');
-            }, delay);
+            }, delay * 0.5);
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
     );
     
     if (cardRef.current) {
@@ -44,7 +44,7 @@ const ContactCard = ({
   return (
     <div 
       ref={cardRef}
-      className="glass-card p-8 rounded-xl flex flex-col opacity-0 translate-y-10 transition-all duration-500 h-full"
+      className="glass-card p-8 rounded-xl flex flex-col opacity-0 translate-y-10 transition-all duration-300 h-full"
     >
       <div className="flex items-center mb-4">
         <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
@@ -80,7 +80,7 @@ const Contact = () => {
           }
         });
       },
-      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
     );
     
     if (sectionRef.current) {
@@ -98,7 +98,6 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
@@ -118,7 +117,7 @@ const Contact = () => {
       <div className="section-container">
         <div 
           ref={sectionRef}
-          className="opacity-0 translate-y-10 transition-all duration-500 text-center mb-16"
+          className="opacity-0 translate-y-10 transition-all duration-300 text-center mb-16"
         >
           <h2 className="section-title">Kontakt z Zakładem Pogrzebowym</h2>
           <p className="section-subtitle">
@@ -130,7 +129,7 @@ const Contact = () => {
           <ContactCard 
             icon={<MapPin className="w-6 h-6 text-primary" />}
             title="Adres"
-            delay={50}
+            delay={20}
           >
             <p className="mb-2">Legionów 48</p>
             <p className="mb-2">90-702 Łódź, Polska</p>
@@ -140,7 +139,7 @@ const Contact = () => {
           <ContactCard 
             icon={<Phone className="w-6 h-6 text-primary" />}
             title="Telefon"
-            delay={100}
+            delay={40}
           >
             <p className="mb-2">Całodobowo:</p>
             <a href="tel:+48123456789" className="text-primary hover:underline">+48 123 456 789</a>
@@ -150,7 +149,7 @@ const Contact = () => {
           <ContactCard 
             icon={<Clock className="w-6 h-6 text-primary" />}
             title="Godziny otwarcia"
-            delay={150}
+            delay={60}
           >
             <p className="mb-2">Poniedziałek - Piątek: 8:00 - 16:00</p>
             <p>Sobota: 9:00 - 13:00</p>
