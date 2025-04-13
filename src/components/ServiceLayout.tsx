@@ -78,8 +78,8 @@ const ServiceLayout = ({
         </div>
       </section>
       
-      {/* Breadcrumb */}
-      <div className="breadcrumb-bar">
+      {/* Breadcrumb - Made sticky when scrolling */}
+      <div className="breadcrumb-bar sticky top-16 z-40">
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-400">
             <Link to="/" className="hover:text-primary transition-colors">Strona Główna</Link>
