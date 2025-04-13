@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Clock, ChevronDown, ChevronRight } from 'lucide-react';
+import { Menu, X, Phone, Clock, ChevronDown, ChevronRight, Cross } from 'lucide-react';
 import { IMAGES } from '../assets/images';
 import {
   NavigationMenu,
@@ -20,7 +19,6 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
-// Services submenu items
 const servicesItems = [
   { name: "Usługi Pogrzebowe Łódź", id: "services", path: "/uslugi" },
   { name: "Organizacja pogrzebów Łódź", id: "services", path: "/uslugi/organizacja-pogrzebow" },
@@ -30,7 +28,6 @@ const servicesItems = [
   { name: "Krematorium Łódź", id: "services", path: "/uslugi/krematorium" }
 ];
 
-// Products submenu items
 const productsItems = [
   { name: "Asortyment", id: "products", path: "/asortyment" },
   { name: "Trumny Łódź", id: "products", path: "/asortyment/trumny" },
@@ -72,7 +69,6 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    // If we're on a page that's not home, navigate to home first
     if (window.location.pathname !== '/') {
       window.location.href = '/#' + id;
       return;
@@ -80,7 +76,7 @@ const Navbar = () => {
     
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -80; // Navbar height
+      const yOffset = -80;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       
       window.scrollTo({
@@ -101,11 +97,12 @@ const Navbar = () => {
             <h1 className="text-xl md:text-2xl font-playfair font-bold text-white">
               <span className="text-primary">Nekrolog</span> Łódź
             </h1>
-            <p className="text-white/70 text-xs md:text-sm ml-2 italic">Jolanta Kostowska</p>
+            <p className="text-white/70 text-xs md:text-sm ml-2 italic">
+              <Cross className="h-5 w-5 ml-2 text-primary" />
+            </p>
           </div>
         </Link>
         
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <button 
             onClick={() => scrollToSection('home')} 
@@ -114,7 +111,6 @@ const Navbar = () => {
             Strona Główna
           </button>
 
-          {/* Services Dropdown - Desktop */}
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -141,7 +137,6 @@ const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Products Dropdown - Desktop */}
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -182,7 +177,6 @@ const Navbar = () => {
           </button>
         </nav>
         
-        {/* Phone number */}
         <div className="hidden md:flex flex-col items-end">
           <a href="tel:+48602274661" className="flex items-center text-primary hover:text-primary/80 transition-colors">
             <Phone className="w-5 h-5 mr-2" />
@@ -194,13 +188,11 @@ const Navbar = () => {
           </div>
         </div>
         
-        {/* Mobile Menu Button */}
         <button className="md:hidden text-white p-2" onClick={toggleMenu}>
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
       
-      {/* Mobile Navigation - With solid background */}
       <div className={`md:hidden fixed inset-0 top-16 bg-black z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col p-6 space-y-2">
           <div className="border-b border-primary/30 pb-4 text-center">
@@ -216,7 +208,6 @@ const Navbar = () => {
             Strona Główna
           </button>
           
-          {/* Services Submenu - Mobile */}
           <div className="border-b border-white/10">
             <button 
               onClick={() => toggleSubmenu('services')}
@@ -242,7 +233,6 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Products Submenu - Mobile */}
           <div className="border-b border-white/10">
             <button 
               onClick={() => toggleSubmenu('products')}
