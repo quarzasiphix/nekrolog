@@ -3,7 +3,7 @@ import React from 'react';
 import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
 import { Card, CardContent } from "@/components/ui/card";
-import { Coffin, CheckCircle } from 'lucide-react';
+import { Package, CheckCircle } from 'lucide-react';
 
 const Trumny = () => {
   const coffins = [
@@ -53,7 +53,7 @@ const Trumny = () => {
             <Card key={index} className="bg-black/40 border border-gray-800 hover:border-primary/50 transition-all duration-300">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <Coffin className="h-6 w-6 text-primary mr-3" />
+                  <Package className="h-6 w-6 text-primary mr-3" />
                   <h3 className="text-xl font-playfair text-white">{coffin.name}</h3>
                 </div>
                 <p className="text-gray-300 mb-4">{coffin.description}</p>

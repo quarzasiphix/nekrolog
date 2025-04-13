@@ -4,7 +4,7 @@ import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Grid, Box, Coffin, Flower, BookOpen } from 'lucide-react';
+import { Grid, Box, Flower, BookOpen, Package } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Asortyment = () => {
@@ -32,7 +32,7 @@ const Asortyment = () => {
           <Card className="bg-black/40 border border-gray-800 hover:border-primary/50 transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-white font-playfair flex items-center">
-                <Coffin className="h-6 w-6 mr-2 text-primary" />
+                <Package className="h-6 w-6 mr-2 text-primary" />
                 Trumny
               </CardTitle>
             </CardHeader>
@@ -57,7 +57,7 @@ const Asortyment = () => {
           <Card className="bg-black/40 border border-gray-800 hover:border-primary/50 transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-white font-playfair flex items-center">
-                <Coffee className="h-6 w-6 mr-2 text-primary" />
+                <Box className="h-6 w-6 mr-2 text-primary" />
                 Urny
               </CardTitle>
             </CardHeader>
