@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { IMAGES } from '../assets/images';
-import { Phone, Cross } from 'lucide-react';
+import { Cross } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,7 +54,7 @@ const Hero = () => {
             Profesjonalne wsparcie dla rodziny w trudnych chwilach <br />dostępne 24 godziny na dobę
           </p>
           <p className="text-lg max-w-3xl mx-auto mb-10 font-medium text-gray-200">
-            Pamięci Śp. Jolanty Kostowskiej
+            Dom pogrzebowy prowadzony przez Jolantę Kostowską
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-300 delay-200 transform">
@@ -109,3 +109,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
