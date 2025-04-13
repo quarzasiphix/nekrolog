@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { IMAGES } from '../assets/images';
 import { Cross, Phone } from 'lucide-react';
