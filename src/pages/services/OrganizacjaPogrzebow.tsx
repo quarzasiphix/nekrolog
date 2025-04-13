@@ -1,8 +1,7 @@
-
 import React from 'react';
 import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
-import { Check, Calendar, FileText, Flower, Users } from 'lucide-react';
+import { Check, Calendar, FileText, Flower, Users, Phone } from 'lucide-react';
 
 const OrganizacjaPogrzebow = () => {
   return (
