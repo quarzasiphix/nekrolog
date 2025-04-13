@@ -28,7 +28,7 @@ const ServiceCard = ({
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
     );
     
     if (cardRef.current) {
@@ -45,7 +45,7 @@ const ServiceCard = ({
   return (
     <div 
       ref={cardRef}
-      className="glass-card p-8 rounded-xl flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-700"
+      className="glass-card p-8 rounded-xl flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-500"
     >
       <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6 shadow-inner">
         {icon}
@@ -70,7 +70,7 @@ const Services = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
     );
     
     if (sectionRef.current) {
@@ -89,7 +89,7 @@ const Services = () => {
       <div className="section-container">
         <div 
           ref={sectionRef}
-          className="opacity-0 translate-y-10 transition-all duration-700 text-center mb-16"
+          className="opacity-0 translate-y-10 transition-all duration-500 text-center mb-16"
         >
           <h2 className="section-title">Kompleksowe Usługi Pogrzebowe</h2>
           <p className="section-subtitle">
@@ -103,19 +103,19 @@ const Services = () => {
             icon={<Heart className="w-8 h-8 text-primary" />}
             title="Kompleksowa Organizacja Ceremonii"
             description="Przejmiemy wszelkie obowiązki i formalności związane z pożegnaniem zmarłej osoby, aby umożliwić rodzinie godne przeżywanie żałoby."
-            delay={100}
+            delay={50}
           />
           <ServiceCard 
             icon={<Truck className="w-8 h-8 text-primary" />}
             title="Przewóz Zwłok"
             description="Zapewniamy profesjonalny przewóz ciał zmarłych, trumien oraz urn na terenie całego kraju i Europy."
-            delay={300}
+            delay={100}
           />
           <ServiceCard 
             icon={<Flame className="w-8 h-8 text-primary" />}
             title="Kremacja"
             description="Zajmujemy się organizacją kremacji oraz przygotowaniem ceremonii, zgodnie z życzeniami rodziny."
-            delay={500}
+            delay={150}
           />
         </div>
         

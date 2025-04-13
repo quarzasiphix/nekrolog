@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, User } from 'lucide-react';
 
@@ -28,7 +27,7 @@ const ContactCard = ({
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
     );
     
     if (cardRef.current) {
@@ -45,7 +44,7 @@ const ContactCard = ({
   return (
     <div 
       ref={cardRef}
-      className="glass-card p-8 rounded-xl flex flex-col opacity-0 translate-y-10 transition-all duration-700 h-full"
+      className="glass-card p-8 rounded-xl flex flex-col opacity-0 translate-y-10 transition-all duration-500 h-full"
     >
       <div className="flex items-center mb-4">
         <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
@@ -81,7 +80,7 @@ const Contact = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
     );
     
     if (sectionRef.current) {
@@ -119,7 +118,7 @@ const Contact = () => {
       <div className="section-container">
         <div 
           ref={sectionRef}
-          className="opacity-0 translate-y-10 transition-all duration-700 text-center mb-16"
+          className="opacity-0 translate-y-10 transition-all duration-500 text-center mb-16"
         >
           <h2 className="section-title">Kontakt z Zakładem Pogrzebowym</h2>
           <p className="section-subtitle">
@@ -131,7 +130,7 @@ const Contact = () => {
           <ContactCard 
             icon={<MapPin className="w-6 h-6 text-primary" />}
             title="Adres"
-            delay={100}
+            delay={50}
           >
             <p className="mb-2">Legionów 48</p>
             <p className="mb-2">90-702 Łódź, Polska</p>
@@ -141,7 +140,7 @@ const Contact = () => {
           <ContactCard 
             icon={<Phone className="w-6 h-6 text-primary" />}
             title="Telefon"
-            delay={300}
+            delay={100}
           >
             <p className="mb-2">Całodobowo:</p>
             <a href="tel:+48123456789" className="text-primary hover:underline">+48 123 456 789</a>
@@ -151,7 +150,7 @@ const Contact = () => {
           <ContactCard 
             icon={<Clock className="w-6 h-6 text-primary" />}
             title="Godziny otwarcia"
-            delay={500}
+            delay={150}
           >
             <p className="mb-2">Poniedziałek - Piątek: 8:00 - 16:00</p>
             <p>Sobota: 9:00 - 13:00</p>
@@ -159,7 +158,6 @@ const Contact = () => {
           </ContactCard>
         </div>
         
-        {/* Contact Form and Map */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="glass-card p-8 rounded-xl">
             <h3 className="text-2xl font-playfair font-medium mb-6 text-white">Wyślij wiadomość</h3>

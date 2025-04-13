@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { IMAGES } from '../assets/images';
 import { Phone } from 'lucide-react';
@@ -7,12 +6,7 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Slight delay for animation
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-    
-    return () => clearTimeout(timer);
+    setIsVisible(true);
   }, []);
 
   return (
@@ -24,7 +18,7 @@ const Hero = () => {
           backgroundImage: `url(${IMAGES.hero})`,
           filter: 'brightness(0.2)',
           transform: isVisible ? 'scale(1)' : 'scale(1.05)',
-          transition: 'transform 1.5s ease-out, filter 1.5s ease-out'
+          transition: 'transform 0.8s ease-out, filter 0.8s ease-out'
         }}
       />
       
@@ -43,23 +37,23 @@ const Hero = () => {
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(-20px)',
-            transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
+            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         />
       </div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center text-center text-white">
-        <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`transition-all duration-500 delay-100 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-medium mb-6 leading-tight">
             Kompleksowe <span className="text-primary">Usługi Pogrzebowe</span> <br />Nekrolog Łódź
           </h1>
-          <div className={`w-24 h-1 bg-primary mx-auto mb-8 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 font-light transition-all duration-1000 delay-700 transform leading-relaxed text-gray-300">
+          <div className={`w-24 h-1 bg-primary mx-auto mb-8 transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 font-light transition-all duration-500 delay-300 transform leading-relaxed text-gray-300">
             Profesjonalne wsparcie dla rodziny w trudnych chwilach <br />dostępne 24 godziny na dobę
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 delay-800 transform">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-500 delay-400 transform">
             <a 
               href="tel:+48123456789" 
               className="px-8 py-4 bg-primary text-black rounded-md hover:bg-primary/90 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl flex items-center gap-2"
