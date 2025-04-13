@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { IMAGES } from '../assets/images';
-import { Cross } from 'lucide-react';
+import { Cross, Phone } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -109,4 +109,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
