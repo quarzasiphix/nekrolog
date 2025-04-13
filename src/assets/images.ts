@@ -17,6 +17,8 @@ export const IMAGES = {
   logo: "/lovable-uploads/2f5ab925-ad45-40f7-bae2-79a26e3b10ac.png",
   subpages: {
     organizacja: "/lovable-uploads/43403de6-52a6-4358-9243-c48a5cf08fdb.png",
-    oprawa: "/lovable-uploads/10748b32-d109-4ba1-b840-8ec65c7410eb.png"
+    oprawa: "/lovable-uploads/10748b32-d109-4ba1-b840-8ec65c7410eb.png",
+    transport: "/lovable-uploads/56253cbb-d98a-4693-b7f6-a518b3526376.png",
+    krematorium: "/lovable-uploads/c4f32f6e-8b8d-4c33-82e7-64b4d89a4051.png"
   }
 };
