@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Clock, ChevronDown, ChevronRight } from 'lucide-react';
+import { LetterN } from './icons/LetterN';  // Import the new icon
 import { IMAGES } from '../assets/images';
 import {
   NavigationMenu,
