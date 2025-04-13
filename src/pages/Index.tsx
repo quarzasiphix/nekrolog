@@ -6,6 +6,7 @@ import Services from '../components/Services';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import ServicesCta from '../components/ServicesCta';
+import Reviews from '../components/Reviews';
 
 const Index = () => {
   useEffect(() => {
@@ -49,6 +50,7 @@ const Index = () => {
       <Services />
       <ServicesCta />
       <About />
+      <Reviews />
       <Contact />
     </Layout>
   );
