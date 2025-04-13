@@ -4,7 +4,7 @@ import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Grid, Box, Flower, BookOpen, Package } from 'lucide-react';
+import { Package, Box, Flower, Shirt } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Asortyment = () => {
@@ -100,6 +100,32 @@ const Asortyment = () => {
             <CardFooter>
               <Button asChild className="w-full">
                 <Link to="/asortyment/wiazanki">Zobacz więcej</Link>
+              </Button>
+            </CardFooter>
+          </Card>
+
+          <Card className="bg-black/40 border border-gray-800 hover:border-primary/50 transition-all duration-300">
+            <CardHeader>
+              <CardTitle className="text-white font-playfair flex items-center">
+                <Shirt className="h-6 w-6 mr-2 text-primary" />
+                Odzież pogrzebowa
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <img 
+                src={IMAGES.subpages.odziez || IMAGES.cross}
+
+                alt="Odzież pogrzebowa" 
+                className="w-full h-48 object-cover rounded-md mb-4"
+              />
+              <p className="text-gray-300">
+                Oferujemy szeroki wybór odzieży żałobnej dla uczestników ceremonii pogrzebowych 
+                oraz specjalną odzież dla zmarłych. Nasze ubrania łączą elegancję z komfortem.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button asChild className="w-full">
+                <Link to="/asortyment/odziez">Zobacz więcej</Link>
               </Button>
             </CardFooter>
           </Card>

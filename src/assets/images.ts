@@ -21,7 +21,8 @@ export const IMAGES = {
     transport: "/lovable-uploads/56253cbb-d98a-4693-b7f6-a518b3526376.png",
     krematorium: "/lovable-uploads/c4f32f6e-8b8d-4c33-82e7-64b4d89a4051.png",
     trumny: "https://images.unsplash.com/photo-1594743896161-be4194518a17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    urny: "https://images.unsplash.com/photo-1593037515900-2e89e67a9af9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    wiazanki: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    urny: "/lovable-uploads/76b7bbb6-e9e1-483f-852d-2a57715593bd.png",
+    wiazanki: "/lovable-uploads/db801cea-048e-4fe4-ae70-6fde63e286cc.png",
+    odziez: "/lovable-uploads/38d1509f-8540-4a06-8964-0643e2091049.png"
   }
 };

@@ -14,6 +14,9 @@ import TransportZmarlych from "./pages/services/TransportZmarlych";
 import Krematorium from "./pages/services/Krematorium";
 import Asortyment from "./pages/asortyment/Asortyment";
 import Trumny from "./pages/asortyment/Trumny";
+import Urny from "./pages/asortyment/Urny";
+import Wiazanki from "./pages/asortyment/Wiazanki";
+import Odziez from "./pages/asortyment/Odziez";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +40,9 @@ const App = () => (
           {/* Asortyment routes */}
           <Route path="/asortyment" element={<Asortyment />} />
           <Route path="/asortyment/trumny" element={<Trumny />} />
+          <Route path="/asortyment/urny" element={<Urny />} />
+          <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
+          <Route path="/asortyment/odziez" element={<Odziez />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
