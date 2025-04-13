@@ -20,6 +20,6 @@ export const LetterN = ({
     strokeLinejoin="round" 
     {...props}
   >
-    <path d="M4 4v16l8-8 8 8V4" />
+    <path d="M5 4v16M5 4l14 16M19 4v16" />
   </svg>
 );
