@@ -9,7 +9,7 @@ const Krematorium = () => {
       title="Krematorium w Łodzi"
       description="Profesjonalna usługa kremacji z zachowaniem godności i szacunku dla zmarłego"
       backgroundImage={IMAGES.services.cremation}
-      metaDescription="Profesjonalne usługi kremacji w Łodzi. Organizacja kremacji, urny, transport, dokumenty. Pełna pomoc w organizacji pogrzebu po kremacji. ☎ +48 123 456 789"
+      metaDescription="Profesjonalne usługi kremacji w Łodzi. Organizacja kremacji, urny, transport, dokumenty. Pełna pomoc w organizacji pogrzebu po kremacji. ☎ +48 602 274 661"
       metaKeywords="krematorium łódź, kremacja zwłok, urny, pogrzeb z kremacją, spopielenie, dom pogrzebowy łódź"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

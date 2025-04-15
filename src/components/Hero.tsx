@@ -33,9 +33,9 @@ const Hero = () => {
       {/* Logo */}
       <div className="relative z-10 mb-8">
         <img 
-          src={IMAGES.logo} 
+          src="/lovable-uploads/cross.png" 
           alt="Nekrolog Łódź" 
-          className="h-24 mx-auto"
+          className="h-32 mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(-20px)',

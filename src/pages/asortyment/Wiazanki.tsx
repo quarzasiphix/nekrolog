@@ -44,7 +44,7 @@ const Wiazanki = () => {
       title="Wiązanki i wieńce"
       description="Kompozycje kwiatowe w formie wieńców, wiązanek, koszy i szarf"
       backgroundImage={IMAGES.interior}
-      metaDescription="Wiązanki pogrzebowe, wieńce, kosze kwiatowe, szarfy na pogrzeb. Szeroki wybór kompozycji kwiatowych. Dom pogrzebowy w Łodzi. ☎ +48 123 456 789"
+      metaDescription="Wiązanki pogrzebowe, wieńce, kosze kwiatowe, szarfy na pogrzeb. Szeroki wybór kompozycji kwiatowych. Dom pogrzebowy w Łodzi. ☎ +48 602 274 661"
       metaKeywords="wiązanki pogrzebowe łódź, wieńce pogrzebowe, kompozycje kwiatowe pogrzeb, kwiaty na pogrzeb łódź"
     >
       <div className="container mx-auto">

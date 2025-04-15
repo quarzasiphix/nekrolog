@@ -244,7 +244,7 @@ const Services = () => {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3 text-white">
                   <Phone className="text-primary w-5 h-5" />
-                  <span className="font-medium">+48 123 456 789</span>
+                  <span className="font-medium">+48 602 274 661</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <Clock className="text-primary w-5 h-5" />
@@ -472,7 +472,7 @@ const Services = () => {
               Nasz zespół jest dostępny całodobowo, aby zapewnić profesjonalne wsparcie i pomoc w organizacji pogrzebu
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
-              <a href="tel:+48123456789" className="button-primary flex items-center justify-center gap-2 w-full sm:w-auto">
+              <a href="tel:+48602274661" className="button-primary flex items-center justify-center gap-2 w-full sm:w-auto">
                 <Phone className="w-5 h-5" />
                 <span>Zadzwoń teraz</span>
               </a>

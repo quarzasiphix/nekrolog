@@ -1,29 +1,48 @@
-
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, Heart, Cross } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin, Clock, Heart, Cross, ExternalLink } from 'lucide-react';
 import { IMAGES } from '../assets/images';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const facebookUrl = "https://www.facebook.com/people/Zak%C5%82ad-pogrzebowyNekrolog-Jolanta-Kostowska/100092232063111/";
+  const googleBusinessUrl = "https://g.co/kgs/bjTq537";
 
   return (
     <footer className="bg-black text-white border-t border-white/10">
       <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <img src={IMAGES.logo} alt="Nekrolog Łódź" className="h-16 mb-4" />
+            <Link to="/" className="flex items-center space-x-2 mb-4">
+              <div className="flex items-center">
+                <h1 className="text-xl md:text-2xl font-playfair font-bold text-white">
+                  <span className="text-primary">Nekrolog</span> Łódź
+                </h1>
+              </div>
+            </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Kompleksowe usługi pogrzebowe z pełnym wsparciem dla rodziny w trudnych chwilach. Zapewniamy profesjonalną i godną oprawę ceremonii.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="#" 
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/80 transition-colors"
                 aria-label="Facebook"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
+              </a>
+              <a
+                href={googleBusinessUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/80 transition-colors"
+                aria-label="Profil Google"
+              >
+                <MapPin className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>
@@ -86,7 +105,6 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-gray-500 text-sm flex items-center justify-center">
             &copy; {currentYear} Nekrolog Łódź - Usługi Pogrzebowe Jolanta Kostowska. Wszelkie prawa zastrzeżone.
-            <Cross className="w-3 h-3 mx-1 text-primary" />
           </p>
         </div>
       </div>

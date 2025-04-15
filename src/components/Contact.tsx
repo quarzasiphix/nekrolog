@@ -142,7 +142,7 @@ const Contact = () => {
             delay={40}
           >
             <p className="mb-2">Całodobowo:</p>
-            <a href="tel:+48123456789" className="text-primary hover:underline">+48 123 456 789</a>
+            <a href="tel:+48602274661" className="text-primary hover:underline">+48 602 274 661</a>
             <p className="mt-4 text-sm">W nagłych przypadkach jesteśmy dostępni 24 godziny na dobę, 7 dni w tygodniu</p>
           </ContactCard>
           

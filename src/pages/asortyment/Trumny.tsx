@@ -34,7 +34,7 @@ const Trumny = () => {
       title="Trumny"
       description="Szeroki wybór trumien najwyższej jakości"
       backgroundImage={IMAGES.cemetery}
-      metaDescription="Trumny do pogrzebu tradycyjnego - dębowe, sosnowe, olchowe. Szeroki wybór trumien różnego rodzaju. Dom pogrzebowy w Łodzi. ☎ +48 123 456 789"
+      metaDescription="Trumny do pogrzebu tradycyjnego - dębowe, sosnowe, olchowe. Szeroki wybór trumien różnego rodzaju. Dom pogrzebowy w Łodzi. ☎ +48 602 274 661"
       metaKeywords="trumny łódź, trumny dębowe, trumny sosnowe, trumny pogrzebowe, trumny tradycyjne"
     >
       <div className="container mx-auto">

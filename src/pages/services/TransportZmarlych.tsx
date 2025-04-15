@@ -10,7 +10,7 @@ const TransportZmarlych = () => {
       title="Transport Zmarłych w Łodzi"
       description="Profesjonalny transport zmarłych krajowy i międzynarodowy z zachowaniem wszelkich procedur i godności"
       backgroundImage={IMAGES.services.transport}
-      metaDescription="Profesjonalny transport zmarłych w Łodzi - krajowy i międzynarodowy. Kompleksowa obsługa, karawan, chłodnia. Pomoc w formalnościach. ☎ +48 123 456 789"
+      metaDescription="Profesjonalny transport zmarłych w Łodzi - krajowy i międzynarodowy. Kompleksowa obsługa, karawan, chłodnia. Pomoc w formalnościach. ☎ +48 602 274 661"
       metaKeywords="transport zmarłych łódź, przewóz zwłok, karawan, transport międzynarodowy zmarłych, chłodnia, dom pogrzebowy łódź"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

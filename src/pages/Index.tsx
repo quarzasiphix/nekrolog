@@ -9,39 +9,96 @@ import Reviews from '../components/Reviews';
 
 const Index = () => {
   useEffect(() => {
-    // Update page title for SEO
-    document.title = "Nekrolog Łódź - Profesjonalne Usługi Pogrzebowe | Całodobowa Pomoc";
-    
-    // Update meta description
-    const metaDescTag = document.querySelector('meta[name="description"]');
-    if (metaDescTag) {
-      metaDescTag.setAttribute('content', "Kompleksowe usługi pogrzebowe w Łodzi. Organizacja pogrzebów, kremacja, przewóz zwłok. Wsparcie i pomoc 24/7 w trudnych chwilach. ☎ +48 123 456 789");
+    // --- SEO Meta Tag Updates ---
+    const pageTitle = "Nekrolog Łódź - Usługi Pogrzebowe Jolanta Kostowska | Całodobowo";
+    const pageDescription = "Profesjonalny zakład pogrzebowy Nekrolog Łódź Jolanta Kostowska. Kompleksowe usługi pogrzebowe, organizacja ceremonii, kremacja, transport. Dostępni całodobowo. Tel: +48 602 274 661.";
+    const keywords = "usługi pogrzebowe łódź, zakład pogrzebowy łódź, dom pogrzebowy łódź, nekrolog łódź, jolanta kostowska, pogrzeby łódź, kremacja łódź, transport zwłok łódź, całodobowy zakład pogrzebowy";
+    const canonicalUrl = window.location.href; // Or your preferred canonical URL
+
+    document.title = pageTitle;
+
+    const setMetaTag = (name, content, isProperty = false) => {
+      const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
+      let element = document.querySelector(selector);
+      if (!element) {
+        element = document.createElement('meta');
+        if (isProperty) {
+          element.setAttribute('property', name);
+        } else {
+          element.setAttribute('name', name);
+        }
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
+
+    setMetaTag('description', pageDescription);
+    setMetaTag('keywords', keywords);
+    setMetaTag('og:title', pageTitle, true);
+    setMetaTag('og:description', pageDescription, true);
+    setMetaTag('og:type', 'website', true);
+    setMetaTag('og:url', canonicalUrl, true);
+    // Add og:image if you have a specific image for social sharing
+    // setMetaTag('og:image', 'URL_TO_YOUR_IMAGE.jpg', true);
+
+    // Add Canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', canonicalUrl);
+
+
+    // --- Structured Data (JSON-LD) ---
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "FuneralHome",
+      "name": "Nekrolog Łódź - Usługi Pogrzebowe Jolanta Kostowska",
+      "description": pageDescription,
+      "telephone": "+48602274661",
+      "email": "kontakt@nekrolog-lodz.pl", // Make sure this email is correct
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Legionów 48",
+        "addressLocality": "Łódź",
+        "postalCode": "90-702",
+        "addressCountry": "PL"
+      },
+      "url": canonicalUrl,
+      "openingHours": "Mo-Fr 08:00-16:00, Sa 09:00-13:00", // Adjust if needed, mention 24/7 availability separately if applicable
+      "priceRange": "$$", // Optional: Indicate price range if desired (e.g., $, $$, $$$)
+      "sameAs": [
+        "https://www.facebook.com/people/Zak%C5%82ad-pogrzebowyNekrolog-Jolanta-Kostowska/100092232063111/",
+        // Add other relevant profiles if any (e.g., Google Maps URL from the business profile)
+      ]
+      // Add image URL if available: "image": "URL_TO_LOGO_OR_REPRESENTATIVE_IMAGE.jpg"
+    };
+
+    // Remove existing script tag if it exists
+    const existingScript = document.getElementById('structured-data');
+    if (existingScript) {
+      existingScript.remove();
     }
 
-    // Add additional meta tags for better SEO
-    const metaTags = [
-      { name: 'keywords', content: 'usługi pogrzebowe, dom pogrzebowy łódź, kremacja, organizacja pogrzebu, nekrolog, pogrzeby, przewóz zwłok' },
-      { property: 'og:title', content: 'Nekrolog Łódź - Profesjonalne Usługi Pogrzebowe | Całodobowa Pomoc' },
-      { property: 'og:description', content: 'Kompleksowe usługi pogrzebowe w Łodzi. Organizacja pogrzebów, kremacja, przewóz zwłok. Wsparcie i pomoc 24/7 w trudnych chwilach.' },
-      { property: 'og:type', content: 'website' }
-    ];
+    // Add new script tag
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'structured-data';
+    script.innerHTML = JSON.stringify(structuredData);
+    document.head.appendChild(script);
 
-    metaTags.forEach(tag => {
-      const existingTag = document.querySelector(`meta[${tag.property ? 'property' : 'name'}="${tag.property || tag.name}"]`);
-      if (existingTag) {
-        existingTag.setAttribute('content', tag.content);
-      } else {
-        const newTag = document.createElement('meta');
-        if (tag.property) {
-          newTag.setAttribute('property', tag.property);
-        } else {
-          newTag.setAttribute('name', tag.name);
-        }
-        newTag.setAttribute('content', tag.content);
-        document.head.appendChild(newTag);
+    // Cleanup function to remove the script when the component unmounts
+    return () => {
+      const scriptToRemove = document.getElementById('structured-data');
+      if (scriptToRemove) {
+        scriptToRemove.remove();
       }
-    });
-  }, []);
+      // Optionally remove other meta tags if they are specific only to this page
+    };
+
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <Layout>
@@ -51,6 +108,19 @@ const Index = () => {
       <ServicesCta />
       <About />
       <Contact />
+      {/* Sekcja "Potrzebujesz pomocy?" */}
+      <div className="bg-gray-100 py-12">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-semibold mb-4">Potrzebujesz pomocy?</h2>
+          <p className="text-lg mb-6">Jesteśmy dostępni 24/7, aby Ci pomóc w trudnych chwilach.</p>
+          <a
+            href="tel:+48602274661"
+            className="text-2xl font-bold text-primary hover:underline"
+          >
+            Zadzwoń: +48 602 274 661
+          </a>
+        </div>
+      </div>
     </Layout>
   );
 };

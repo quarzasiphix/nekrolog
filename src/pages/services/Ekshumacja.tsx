@@ -10,7 +10,7 @@ const Ekshumacja = () => {
       title="Ekshumacja Zwłok w Łodzi"
       description="Profesjonalne przeprowadzenie ekshumacji z zachowaniem wszelkich formalności i godności zmarłego"
       backgroundImage={IMAGES.services.exhumation}
-      metaDescription="Profesjonalna usługa ekshumacji zwłok w Łodzi. Oferujemy kompleksową pomoc w uzyskaniu pozwoleń, przeprowadzeniu procesu ekshumacji, transporcie i ponownym pochówku. ☎ +48 123 456 789"
+      metaDescription="Profesjonalna usługa ekshumacji zwłok w Łodzi. Oferujemy kompleksową pomoc w uzyskaniu pozwoleń, przeprowadzeniu procesu ekshumacji, transporcie i ponownym pochówku. ☎ +48 602 274 661"
       metaKeywords="ekshumacja łódź, przeniesienie zwłok, pozwolenie na ekshumację, procedury ekshumacji, dom pogrzebowy łódź"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

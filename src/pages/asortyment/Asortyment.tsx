@@ -13,7 +13,7 @@ const Asortyment = () => {
       title="Asortyment"
       description="Szeroki wybór trumien, urn i innych artykułów pogrzebowych"
       backgroundImage={IMAGES.cemetery}
-      metaDescription="Trumny, urny, krzyże, wieńce, wiązanki, artykuły pogrzebowe. Szeroki wybór asortymentu. Dom pogrzebowy w Łodzi. ☎ +48 123 456 789"
+      metaDescription="Trumny, urny, krzyże, wieńce, wiązanki, artykuły pogrzebowe. Szeroki wybór asortymentu. Dom pogrzebowy w Łodzi. ☎ +48 602 274 661"
       metaKeywords="trumny łódź, urny łódź, wiązanki pogrzebowe, wieńce pogrzebowe, artykuły pogrzebowe łódź"
     >
       <div className="container mx-auto">

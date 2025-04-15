@@ -98,7 +98,6 @@ const Navbar = () => {
               <span className="text-primary">Nekrolog</span> Łódź
             </h1>
             <p className="text-white/70 text-xs md:text-sm ml-2 italic">
-              <Cross className="h-5 w-5 ml-2 text-primary" />
             </p>
           </div>
         </Link>

@@ -44,7 +44,7 @@ const Urny = () => {
       title="Urny"
       description="Szeroki wybór urn różnego rodzaju - metalowych, ceramicznych, drewnianych, biodegradowalnych"
       backgroundImage={IMAGES.candles}
-      metaDescription="Urny kremacyjne, biodegradowalne, metalowe, ceramiczne, drewniane. Szeroki wybór urn różnych typów. Dom pogrzebowy w Łodzi. ☎ +48 123 456 789"
+      metaDescription="Urny kremacyjne, biodegradowalne, metalowe, ceramiczne, drewniane. Szeroki wybór urn różnych typów. Dom pogrzebowy w Łodzi. ☎ +48 602 274 661"
       metaKeywords="urny łódź, urny kremacyjne, urny metalowe, urny ceramiczne, urny łódź"
     >
       <div className="container mx-auto">

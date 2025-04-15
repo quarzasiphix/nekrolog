@@ -1,60 +1,39 @@
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+
+// Import components
+import Index from './pages/Index';
+import NotFound from './pages/NotFound';
 import OrganizacjaPogrzebow from "./pages/services/OrganizacjaPogrzebow";
 import OprawaMuzyczna from "./pages/services/OprawaMuzyczna";
 import UslugiPogrzebowe from "./pages/services/UslugiPogrzebowe";
-import Ekshumacja from "./pages/services/Ekshumacja";
-import TransportZmarlych from "./pages/services/TransportZmarlych";
-import Krematorium from "./pages/services/Krematorium";
-import Asortyment from "./pages/asortyment/Asortyment";
-import Trumny from "./pages/asortyment/Trumny";
-import Urny from "./pages/asortyment/Urny";
-import Wiazanki from "./pages/asortyment/Wiazanki";
-import Odziez from "./pages/asortyment/Odziez";
-import Wience from "./pages/asortyment/Wience";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <HelmetProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            
-            {/* Usługi routes */}
-            <Route path="/uslugi" element={<UslugiPogrzebowe />} />
-            <Route path="/uslugi/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
-            <Route path="/uslugi/oprawa-muzyczna" element={<OprawaMuzyczna />} />
-            <Route path="/uslugi/ekshumacja" element={<Ekshumacja />} />
-            <Route path="/uslugi/transport" element={<TransportZmarlych />} />
-            <Route path="/uslugi/krematorium" element={<Krematorium />} />
-            
-            {/* Asortyment routes */}
-            <Route path="/asortyment" element={<Asortyment />} />
-            <Route path="/asortyment/trumny" element={<Trumny />} />
-            <Route path="/asortyment/urny" element={<Urny />} />
-            <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
-            <Route path="/asortyment/odziez" element={<Odziez />} />
-            <Route path="/asortyment/wience" element={<Wience />} />
-            
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </HelmetProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <HelmetProvider>
+            <Toaster />
+            <Sonner />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/uslugi" element={<UslugiPogrzebowe />} />
+              <Route path="/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
+              <Route path="/oprawa-muzyczna" element={<OprawaMuzyczna />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </HelmetProvider>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </BrowserRouter>
+  );
+}
 
 export default App;
