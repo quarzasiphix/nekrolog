@@ -8,9 +8,22 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 // Import components
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
+
+// Import all services from the services directory
+import UslugiPogrzebowe from "./pages/services/UslugiPogrzebowe";
 import OrganizacjaPogrzebow from "./pages/services/OrganizacjaPogrzebow";
 import OprawaMuzyczna from "./pages/services/OprawaMuzyczna";
-import UslugiPogrzebowe from "./pages/services/UslugiPogrzebowe";
+import Ekshumacja from "./pages/services/Ekshumacja";
+import Transport from "./pages/services/TransportZmarlych";
+import Krematorium from "./pages/services/Krematorium";
+
+// Import asortyment pages
+import Asortyment from "./pages/asortyment/Asortyment";
+import Odziez from "./pages/asortyment/Odziez";
+import Trumny from "./pages/asortyment/Trumny";
+import Urny from "./pages/asortyment/Urny";
+import Wiazanki from "./pages/asortyment/Wiazanki";
+import Wience from "./pages/asortyment/Wience";
 
 const queryClient = new QueryClient();
 
@@ -25,8 +38,17 @@ function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/uslugi" element={<UslugiPogrzebowe />} />
-              <Route path="/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
-              <Route path="/oprawa-muzyczna" element={<OprawaMuzyczna />} />
+              <Route path="/uslugi/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
+              <Route path="/uslugi/oprawa-muzyczna" element={<OprawaMuzyczna />} />
+              <Route path="/uslugi/ekshumacja" element={<Ekshumacja />} />
+              <Route path="/uslugi/transport" element={<Transport />} />
+              <Route path="/uslugi/krematorium" element={<Krematorium />} />
+              <Route path="/asortyment" element={<Asortyment />} />
+              <Route path="/asortyment/odziez" element={<Odziez />} />
+              <Route path="/asortyment/trumny" element={<Trumny />} />
+              <Route path="/asortyment/urny" element={<Urny />} />
+              <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
+              <Route path="/asortyment/wience" element={<Wience />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </HelmetProvider>
