@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { CheckCircle, Phone } from 'lucide-react';
 
 const Sidebar = () => {
   return (
     <>
-      <div className="glass-card p-6 rounded-xl mb-8 sticky top-24">
+      <div className="glass-card p-6 rounded-xl mb-8">
         <h3 className="text-xl font-playfair font-medium text-white mb-4">
           Dlaczego oprawa muzyczna jest ważna?
         </h3>

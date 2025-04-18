@@ -37,7 +37,7 @@ function App() {
             <Sonner />
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/uslugi" element={<UslugiPogrzebowe />} />
+              <Route path="/uslugi-pogrzebowe-lodz" element={<UslugiPogrzebowe />} />
               <Route path="/uslugi/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
               <Route path="/uslugi/oprawa-muzyczna" element={<OprawaMuzyczna />} />
               <Route path="/uslugi/ekshumacja" element={<Ekshumacja />} />

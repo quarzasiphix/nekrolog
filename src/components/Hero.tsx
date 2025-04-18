@@ -48,7 +48,7 @@ const Hero = () => {
       <HeroContent isVisible={isVisible} />
       
       {/* Cross Decorative Element */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
         <div className="flex items-center justify-center mx-3">
           <Cross className="h-14 w-14 text-primary cross-glow" />
         </div>

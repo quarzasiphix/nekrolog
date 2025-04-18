@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
@@ -14,50 +13,80 @@ const OrganizacjaPogrzebow = () => {
       metaKeywords="organizacja pogrzebu łódź, ceremonia pogrzebowa, pogrzeb katolicki łódź, pogrzeb świecki, formalności pogrzebowe"
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-playfair font-medium text-white mb-6">
             Kompleksowa organizacja pogrzebów w Łodzi
           </h2>
           
           <div className="prose prose-lg prose-invert max-w-none mb-8">
-            <p>
+            <p className="mb-6">
               Dom Pogrzebowy Nekrolog Łódź oferuje kompleksową organizację pogrzebów, zapewniając 
               profesjonalną obsługę ceremonii i załatwiając wszelkie formalności w imieniu rodziny, 
               która może w spokoju przeżywać żałobę.
             </p>
             
-            <p>
+            <p className="mb-6">
               Organizujemy pogrzeby różnego rodzaju: pogrzeby katolickie, pogrzeby innych wyznań 
               oraz pogrzeby świeckie. Zapewniamy pełną oprawę ceremonii, zarówno tradycyjne jak i 
               niestandardowe formy pożegnania, zawsze dostosowane do życzeń rodziny i osobowości 
               zmarłego.
             </p>
             
-            <p>
+            <p className="mb-4">
               <strong>W ramach usługi organizacji pogrzebu oferujemy:</strong>
             </p>
             
-            <ul>
-              <li>Transport zwłok z miejsca zgonu do domu pogrzebowego</li>
-              <li>Przygotowanie i przechowanie ciała zmarłego</li>
-              <li>Wybór trumny lub urny oraz akcesoriów pogrzebowych</li>
-              <li>Uzyskanie aktu zgonu w Urzędzie Stanu Cywilnego</li>
-              <li>Rezerwację terminu w kościele, krematorium lub na cmentarzu</li>
-              <li>Przygotowanie i druk nekrologów oraz klepsydr pogrzebowych</li>
-              <li>Oprawę muzyczną ceremonii pogrzebowej</li>
-              <li>Dekoracje kwiatowe: wieńce, wiązanki, kwiaty do trumny</li>
-              <li>Kompleksową obsługę ceremonii pogrzebowej</li>
-              <li>Pomoc w uzyskaniu zasiłku pogrzebowego z ZUS/KRUS</li>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Transport zwłok z miejsca zgonu do domu pogrzebowego</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Przygotowanie i przechowanie ciała zmarłego</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Wybór trumny lub urny oraz akcesoriów pogrzebowych</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Uzyskanie aktu zgonu w Urzędzie Stanu Cywilnego</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Rezerwację terminu w kościele, krematorium lub na cmentarzu</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Przygotowanie i druk nekrologów oraz klepsydr pogrzebowych</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Oprawę muzyczną ceremonii pogrzebowej</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Dekoracje kwiatowe: wieńce, wiązanki, kwiaty do trumny</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Kompleksową obsługę ceremonii pogrzebowej</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <span>Pomoc w uzyskaniu zasiłku pogrzebowego z ZUS/KRUS</span>
+              </li>
             </ul>
           </div>
           
           <div className="space-y-6 mb-10">
-            <h3 className="text-xl font-playfair font-medium text-white">
+            <h3 className="text-xl font-playfair font-medium text-white mb-6">
               Jak wygląda proces organizacji pogrzebu w Nekrolog Łódź?
             </h3>
             
             <div className="glass-card p-6 rounded-xl">
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-4 mb-6">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                   <Calendar className="w-5 h-5 text-primary" />
                 </div>
@@ -70,7 +99,7 @@ const OrganizacjaPogrzebow = () => {
                 </div>
               </div>
               
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-4 mb-6">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                   <FileText className="w-5 h-5 text-primary" />
                 </div>
@@ -84,7 +113,7 @@ const OrganizacjaPogrzebow = () => {
                 </div>
               </div>
               
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-4 mb-6">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                   <Users className="w-5 h-5 text-primary" />
                 </div>
@@ -114,12 +143,12 @@ const OrganizacjaPogrzebow = () => {
             </div>
           </div>
           
-          <div className="mb-8">
-            <h3 className="text-xl font-playfair font-medium text-white mb-4">
+          <div className="mb-12">
+            <h3 className="text-xl font-playfair font-medium text-white mb-6">
               Rodzaje ceremonii pogrzebowych
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-6">
               <div className="glass-card p-6 rounded-xl bg-opacity-60">
                 <h4 className="text-lg font-medium text-primary mb-3">Pogrzeb katolicki</h4>
                 <p className="text-gray-300 mb-4">
@@ -155,20 +184,15 @@ const OrganizacjaPogrzebow = () => {
           </div>
           
           <div>
-            <img 
-              src={IMAGES.subpages.organizacja} 
-              alt="Organizacja pogrzebów Łódź" 
-              className="w-full h-auto rounded-lg mb-4 shadow-lg"
-            />
-            
-            <p className="text-gray-300 italic text-center">
+
+            <p className="text-sm text-gray-400 mt-8 text-center">
               Dom pogrzebowy Nekrolog Łódź - kompleksowa organizacja ceremonii pogrzebowych
             </p>
           </div>
         </div>
         
         <div className="lg:col-span-1">
-          <div className="glass-card p-6 rounded-xl mb-8 sticky top-24">
+          <div className="glass-card p-6 rounded-xl mb-8">
             <h3 className="text-xl font-playfair font-medium text-white mb-4">
               Dlaczego warto wybrać nasze usługi?
             </h3>

@@ -20,7 +20,7 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
 const servicesItems = [
-  { name: "Usługi Pogrzebowe Łódź", id: "services", path: "/uslugi" },
+  { name: "Usługi Pogrzebowe Łódź", id: "services", path: "/uslugi-pogrzebowe-lodz" },
   { name: "Organizacja pogrzebów Łódź", id: "services", path: "/uslugi/organizacja-pogrzebow" },
   { name: "Oprawa muzyczna pogrzebu Łódź", id: "services", path: "/uslugi/oprawa-muzyczna" },
   { name: "Ekshumacja zwłok Łódź", id: "services", path: "/uslugi/ekshumacja" },
@@ -179,10 +179,14 @@ const Navbar = () => {
         <div className="hidden md:flex flex-col items-end">
           <a href="tel:+48602274661" className="flex items-center text-primary hover:text-primary/80 transition-colors">
             <Phone className="w-5 h-5 mr-2" />
-            <span className="font-medium">+48 602 274 661</span>
+            <span className="font-medium text-lg">+48 602 274 661</span>
           </a>
-          <div className="flex items-center text-gray-400 text-sm mt-1">
-            <Clock className="w-4 h-4 mr-1" />
+          <a href="tel:+48602270050" className="flex items-center text-gray-300 hover:text-primary/80 transition-colors text-sm mt-1">
+            <Phone className="w-4 h-4 mr-2" />
+            <span className="font-medium">+48 602 270 050</span>
+          </a>
+          <div className="flex items-center text-gray-400 text-xs mt-1">
+            <Clock className="w-3 h-3 mr-1" />
             <span>Dostępni 24/7</span>
           </div>
         </div>
@@ -271,9 +275,13 @@ const Navbar = () => {
             Kontakt
           </button>
           
-          <a href="tel:+48602274661" className="flex items-center justify-center text-primary mt-6 py-4 border border-primary rounded-md">
+          <a href="tel:+48602274661" className="flex items-center justify-center text-primary mt-6 py-3 border border-primary rounded-md w-full">
             <Phone className="w-5 h-5 mr-2" />
-            <span className="font-medium">Całodobowo: +48 602 274 661</span>
+            <span className="font-medium">+48 602 274 661</span>
+          </a>
+          <a href="tel:+48602270050" className="flex items-center justify-center text-gray-300 mt-2 py-3 border border-white/20 rounded-md w-full text-sm">
+            <Phone className="w-4 h-4 mr-2" />
+            <span className="font-medium">+48 602 270 050</span>
           </a>
 
           <div className="mt-8 glass-card p-4 rounded-lg text-center">

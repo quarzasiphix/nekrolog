@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Heart, Truck, Flame, Flower, Music, Calendar, Phone, Clock, MapPin } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,12 +24,12 @@ const ServiceCard = ({
             setTimeout(() => {
               entry.target.classList.add('opacity-100', 'translate-y-0');
               entry.target.classList.remove('opacity-0', 'translate-y-10');
-            }, delay * 0.2); // Reduce delay even more
+            }, delay * 0.1);
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.05, rootMargin: "0px 0px -2% 0px" } // Observe elements even sooner
+      { threshold: 0.05, rootMargin: "0px 0px -2% 0px" }
     );
     
     if (cardRef.current) {
@@ -47,7 +46,7 @@ const ServiceCard = ({
   return (
     <div 
       ref={cardRef}
-      className="glass-card p-8 rounded-xl flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-200" // Decreased duration further
+      className="glass-card p-8 rounded-xl flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-200"
     >
       <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6 shadow-inner">
         {icon}
@@ -79,7 +78,7 @@ const FeatureItem = ({
             setTimeout(() => {
               entry.target.classList.add('opacity-100', 'translate-y-0');
               entry.target.classList.remove('opacity-0', 'translate-y-10');
-            }, delay * 0.2);
+            }, delay * 0.1);
             observer.unobserve(entry.target);
           }
         });
@@ -199,7 +198,7 @@ const Services = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></span>
-                      <span>Wypisanie aktu zgonu w USC</span>
+                      <span>Uzyskanie aktu zgonu w USC</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></span>
@@ -425,14 +424,6 @@ const Services = () => {
                 <li className="flex items-start">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary/80 mt-2 mr-2 flex-shrink-0"></span>
                   <span>Organizacja kremacji w wybranym krematorium</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary/80 mt-2 mr-2 flex-shrink-0"></span>
-                  <span>Bogaty wybór urn tradycyjnych i biodegradowalnych</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary/80 mt-2 mr-2 flex-shrink-0"></span>
-                  <span>Pomoc w organizacji ceremonii pożegnalnej</span>
                 </li>
               </ul>
             </FeatureItem>

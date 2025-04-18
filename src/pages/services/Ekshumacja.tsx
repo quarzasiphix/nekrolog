@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
@@ -11,16 +10,16 @@ const Ekshumacja = () => {
       description="Profesjonalne przeprowadzenie ekshumacji z zachowaniem wszelkich formalności i godności zmarłego"
       backgroundImage={IMAGES.services.exhumation}
       metaDescription="Profesjonalna usługa ekshumacji zwłok w Łodzi. Oferujemy kompleksową pomoc w uzyskaniu pozwoleń, przeprowadzeniu procesu ekshumacji, transporcie i ponownym pochówku. ☎ +48 602 274 661"
-      metaKeywords="ekshumacja łódź, przeniesienie zwłok, pozwolenie na ekshumację, procedury ekshumacji, dom pogrzebowy łódź"
+      metaKeywords="ekshumacja łódź, ekshumacja zwłok, przeniesienie grobu, formalności ekshumacja, dom pogrzebowy łódź"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div>
+        <div className="px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-playfair font-medium text-white mb-6">
             Ekshumacja zwłok - kompleksowa pomoc
           </h2>
           
           <div className="prose prose-lg dark:prose-invert">
-            <p>
+            <p className="mb-6">
               Ekshumacja to proces polegający na wydobyciu szczątków zmarłej osoby z miejsca pochówku 
               w celu ich przeniesienia w inne miejsce. Jest to procedura wymagająca odpowiednich 
               pozwoleń i dokumentów, a także specjalistycznego sprzętu oraz doświadczenia.
@@ -35,7 +34,7 @@ const Ekshumacja = () => {
           </div>
           
           <div className="mt-8 space-y-6">
-            <h3 className="text-xl font-playfair text-white">Dlaczego może być potrzebna ekshumacja?</h3>
+            <h3 className="text-xl font-playfair text-white mb-4">Dlaczego może być potrzebna ekshumacja?</h3>
             
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -63,12 +62,6 @@ const Ekshumacja = () => {
         </div>
         
         <div className="glass-card p-8 rounded-xl">
-          <img 
-            src="/lovable-uploads/234e5bd2-d0ec-45bc-bb9c-8e89f25dcc9a.png" 
-            alt="Ekshumacja zwłok - procedury i formalności" 
-            className="w-full h-auto rounded-md mb-8 shadow-lg"
-          />
-          
           <h3 className="text-xl font-playfair text-white mb-4">
             Kompleksowa usługa ekshumacji obejmuje:
           </h3>
@@ -122,7 +115,7 @@ const Ekshumacja = () => {
             Wymagane dokumenty do przeprowadzenia ekshumacji
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-8">
             <div>
               <h4 className="text-xl font-medium text-white mb-4">Dokumenty podstawowe:</h4>
               <ul className="space-y-3">

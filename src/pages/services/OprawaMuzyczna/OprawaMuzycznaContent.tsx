@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { IMAGES } from '../../../assets/images';
 import ServiceDescription from './components/ServiceDescription';
@@ -10,7 +9,7 @@ import Sidebar from './components/Sidebar';
 const OprawaMuzycznaContent = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-      <div className="lg:col-span-2">
+      <div className="lg:col-span-2 px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl md:text-3xl font-playfair font-medium text-white mb-6">
           Profesjonalna oprawa muzyczna ceremonii pogrzebowej
         </h2>

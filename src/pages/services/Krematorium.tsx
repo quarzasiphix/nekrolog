@@ -10,16 +10,16 @@ const Krematorium = () => {
       description="Profesjonalna usługa kremacji z zachowaniem godności i szacunku dla zmarłego"
       backgroundImage={IMAGES.services.cremation}
       metaDescription="Profesjonalne usługi kremacji w Łodzi. Organizacja kremacji, urny, transport, dokumenty. Pełna pomoc w organizacji pogrzebu po kremacji. ☎ +48 602 274 661"
-      metaKeywords="krematorium łódź, kremacja zwłok, urny, pogrzeb z kremacją, spopielenie, dom pogrzebowy łódź"
+      metaKeywords="kremacja łódź, krematorium, spopielenie zwłok, pochówek urnowy, organizacja kremacji"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div>
+        <div className="px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-playfair font-medium text-white mb-6">
             Kremacja - nowoczesna forma pochówku
           </h2>
           
           <div className="prose prose-lg dark:prose-invert">
-            <p>
+            <p className="mb-6">
               Kremacja (spopielenie) to coraz bardziej popularna forma pochówku, polegająca na 
               spopieleniu ciała zmarłego w specjalnym piecu kremacyjnym. Jest to alternatywa dla 
               tradycyjnego pochówku, wybierana ze względów osobistych, religijnych czy ekonomicznych.
@@ -33,7 +33,7 @@ const Krematorium = () => {
           </div>
           
           <div className="mt-8 space-y-6">
-            <h3 className="text-xl font-playfair text-white">Dlaczego coraz więcej osób wybiera kremację?</h3>
+            <h3 className="text-xl font-playfair text-white mb-4">Dlaczego coraz więcej osób wybiera kremację?</h3>
             
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -61,11 +61,6 @@ const Krematorium = () => {
         </div>
         
         <div className="glass-card p-8 rounded-xl">
-          <img 
-            src={IMAGES.subpages.krematorium} 
-            alt="Krematorium - usługi kremacji w Łodzi" 
-            className="w-full h-auto rounded-md mb-8 shadow-lg"
-          />
           
           <h3 className="text-xl font-playfair text-white mb-4">
             Kompleksowa usługa kremacji obejmuje:
@@ -120,7 +115,7 @@ const Krematorium = () => {
             Proces kremacji - informacje
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-8">
             <div>
               <h4 className="text-xl font-medium text-white mb-4">Przebieg procesu kremacji:</h4>
               <ol className="space-y-3 list-decimal pl-6">

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceLayout from '../../components/ServiceLayout';
 import { IMAGES } from '../../assets/images';
@@ -14,7 +13,7 @@ const TransportZmarlych = () => {
       metaKeywords="transport zmarłych łódź, przewóz zwłok, karawan, transport międzynarodowy zmarłych, chłodnia, dom pogrzebowy łódź"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div>
+        <div className="px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-playfair font-medium text-white mb-6">
             Transport zmarłych - usługa kompleksowa
           </h2>
@@ -62,12 +61,7 @@ const TransportZmarlych = () => {
         </div>
         
         <div className="glass-card p-8 rounded-xl">
-          <img 
-            src={IMAGES.subpages.transport} 
-            alt="Transport zmarłych - krajowy i międzynarodowy" 
-            className="w-full h-auto rounded-md mb-8 shadow-lg"
-          />
-          
+    
           <h3 className="text-xl font-playfair text-white mb-4">
             Profesjonalne usługi transportowe:
           </h3>
@@ -121,7 +115,7 @@ const TransportZmarlych = () => {
             Transport międzynarodowy - informacje
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-8">
             <div>
               <h4 className="text-xl font-medium text-white mb-4">Wymagane dokumenty:</h4>
               <ul className="space-y-3">

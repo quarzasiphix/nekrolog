@@ -76,7 +76,7 @@ const About = () => {
           
           <div 
             ref={contentRef}
-            className="opacity-0 translate-y-10 transition-all duration-300 delay-100 flex flex-col space-y-6"
+            className="opacity-0 translate-y-10 transition-all duration-200 delay-50 flex flex-col space-y-6"
           >
             <h3 className="text-2xl font-playfair font-medium text-white">
               Wsparcie dla Rodziny w Trudnych Chwilach
@@ -90,6 +90,9 @@ const About = () => {
               Z pełnym zaangażowaniem przejmujemy wszelkie obowiązki i formalności związane z pożegnaniem zmarłej osoby. 
               Dbamy o odpowiednią oprawę każdego pogrzebu i dokładamy wszelkich starań, aby odciążyć rodzinę podczas 
               załatwiania formalności.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Rozumiemy, jak trudny jest to czas, dlatego kierujemy się empatią, uczciwością i pełnym zaangażowaniem. Podchodzimy indywidualnie do każdej rodziny, zapewniając transparentność kosztów i wsparcie na każdym kroku organizacji ceremonii.
             </p>
             
             <div className="divider"></div>

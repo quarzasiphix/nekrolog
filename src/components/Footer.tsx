@@ -59,6 +59,10 @@ const Footer = () => {
                 <span className="text-gray-300">+48 602 274 661 (całodobowo)</span>
               </li>
               <li className="flex items-start">
+                <Phone className="w-5 h-5 mr-3 text-primary/70 flex-shrink-0 mt-1" />
+                <span className="text-gray-300">+48 602 270 050</span>
+              </li>
+              <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1" />
                 <span className="text-gray-300">kontakt@nekrolog-lodz.pl</span>
               </li>
@@ -96,7 +100,8 @@ const Footer = () => {
             <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
               <p className="text-sm text-gray-400">
                 <span className="font-medium text-primary">Całodobowy kontakt:</span><br />
-                +48 602 274 661
+                +48 602 274 661<br />
+                +48 602 270 050
               </p>
             </div>
           </div>

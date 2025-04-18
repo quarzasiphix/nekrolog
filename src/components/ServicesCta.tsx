@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { IMAGES } from '../assets/images';
 import { Link } from 'react-router-dom';
@@ -23,7 +22,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image, li
             setTimeout(() => {
               entry.target.classList.add('opacity-100', 'translate-y-0');
               entry.target.classList.remove('opacity-0', 'translate-y-10');
-            }, delay * 0.2);
+            }, delay * 0.1);
             observer.unobserve(entry.target);
           }
         });
@@ -45,7 +44,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image, li
   return (
     <div 
       ref={cardRef}
-      className="opacity-0 translate-y-10 transition-all duration-500 group"
+      className="opacity-0 translate-y-10 transition-all duration-200 group"
     >
       <div className="glass-card h-full flex flex-col overflow-hidden rounded-xl">
         <div className="relative h-48 overflow-hidden">
@@ -107,7 +106,7 @@ const ServicesCta = () => {
       <div className="section-container">
         <div 
           ref={headingRef}
-          className="text-center mb-16 opacity-0 translate-y-10 transition-all duration-500"
+          className="text-center mb-16 opacity-0 translate-y-10 transition-all duration-200"
         >
           <h2 className="section-title">Specjalistyczne Usługi Pogrzebowe</h2>
           <p className="section-subtitle">
