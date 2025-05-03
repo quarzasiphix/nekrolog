@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Phone } from 'lucide-react';
 
@@ -11,7 +10,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ isVisible }) => {
     <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center text-center text-white">
       <div className={`transition-all duration-300 delay-50 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-medium mb-6 leading-tight">
-          Kompleksowe <span className="text-primary">Usługi Pogrzebowe</span> <br />Nekrolog Łódź
+          jolanta uslugi pogrzbeowe
         </h1>
         <div className={`w-24 h-1 bg-primary mx-auto mb-8 transition-all duration-300 delay-100 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
         <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 font-light transition-all duration-300 delay-150 transform leading-relaxed text-gray-300">
