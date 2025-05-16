@@ -46,13 +46,6 @@ const ServiceLayout = ({
   return (
     <HelmetProvider>
       <Layout>
-        <Helmet>
-          <meta name="description" content={metaDescription} />
-          <meta name="keywords" content={metaKeywords} />
-          <meta property="og:title" content={`${title} | Nekrolog Łódź - Usługi Pogrzebowe`} />
-          <meta property="og:description" content={metaDescription} />
-          <meta property="og:type" content="website" />
-        </Helmet>
         
         {/* Hero Section */}
         <section className="relative pt-20 pb-16 md:pb-20 min-h-[40vh] flex items-center">
