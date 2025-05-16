@@ -32,35 +32,47 @@
 
   <!-- Structured Data: FuneralService -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FuneralService",
-    "provider": {
-      "@type": "FuneralHome",
-      "name": "Nekrolog Łódź",
-      "url": "https://nekrolog-lodz.pl"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "FuneralService",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Nekrolog Łódź",
+        "url": "https://nekrolog-lodz.pl"
+      },
+      "serviceType": "Organizacja pogrzebów",
+      "areaServed": {
+        "@type": "City",
+        "name": "Łódź"
+      },
+      "description": "Kompleksowa organizacja pogrzebów w Łodzi: transport zwłok, przygotowanie ciała, wybór trumny/urny, formalności, oprawa muzyczna, dekoracje kwiatowe, pomoc w zasiłku pogrzebowym.",
+      "url": "https://nekrolog-lodz.pl/uslugi/organizacja-pogrzebow/",
+      "serviceOutput": [
+        "Transport zwłok",
+        "Przygotowanie i przechowanie ciała",
+        "Wybór trumny lub urny",
+        "Formalności (akt zgonu, nekrologi)",
+        "Oprawa muzyczna ceremonii",
+        "Dekoracje kwiatowe",
+        "Pomoc w uzyskaniu zasiłku pogrzebowego"
+      ],
+      "telephone": "+48 602 274 661",
+      "sameAs": [
+        "https://www.facebook.com/people/Zak%C5%82ad-pogrzebowyNekrolog-Jolanta-Kostowska/100092232063111/"
+      ]
     },
-    "serviceType": "Organizacja pogrzebów",
-    "areaServed": {
-      "@type": "City",
-      "name": "Łódź"
-    },
-    "description": "Kompleksowa organizacja pogrzebów w Łodzi: transport zwłok, przygotowanie ciała, wybór trumny/urny, formalności, oprawa muzyczna, dekoracje kwiatowe, pomoc w zasiłku pogrzebowym.",
-    "url": "https://nekrolog-lodz.pl/uslugi/organizacja-pogrzebow/",
-    "serviceOutput": [
-      "Transport zwłok",
-      "Przygotowanie i przechowanie ciała",
-      "Wybór trumny lub urny",
-      "Formalności (akt zgonu, nekrologi)",
-      "Oprawa muzyczna ceremonii",
-      "Dekoracje kwiatowe",
-      "Pomoc w uzyskaniu zasiłku pogrzebowego"
-    ],
-    "telephone": "+48 602 274 661",
-    "sameAs": [
-      "https://www.facebook.com/people/Zak%C5%82ad-pogrzebowyNekrolog-Jolanta-Kostowska/100092232063111/"
-    ]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://nekrolog-lodz.pl/uslugi/ekshumacja-zwlok.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Główna", "item": "https://nekrolog-lodz.pl/" },
+        { "@type": "ListItem", "position": 2, "name": "Usługi", "item": "https://nekrolog-lodz.pl/uslugi/" },
+        { "@type": "ListItem", "position": 3, "name": "Organizacja pogrzebów"}
+      ]
+    }
+  ]
   </script>
 
   <!-- rel="publisher" for Facebook -->

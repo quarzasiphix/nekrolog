@@ -33,31 +33,51 @@
 
   <!-- Structured Data: OfferCatalog -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "OfferCatalog",
-    "name": "Asortyment artykułów pogrzebowych",
-    "description": "Trumny, urny, wiązanki i wieńce oraz odzież pogrzebowa najwyższej jakości w Łodzi.",
-    "url": "https://nekrolog-lodz.pl/asortyment/",
-    "itemListElement": [
-      {
-        "@type": "OfferCatalog",
-        "name": "Trumny"
-      },
-      {
-        "@type": "OfferCatalog",
-        "name": "Urny"
-      },
-      {
-        "@type": "OfferCatalog",
-        "name": "Wiązanki i wieńce"
-      },
-      {
-        "@type": "OfferCatalog",
-        "name": "Odzież pogrzebowa"
-      }
-    ]
-  }
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "Asortyment artykułów pogrzebowych",
+      "description": "Trumny, urny, wiązanki i wieńce oraz odzież pogrzebowa najwyższej jakości w Łodzi.",
+      "url": "https://nekrolog-lodz.pl/asortyment/",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Trumny"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Urny"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Wiązanki i wieńce"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Odzież pogrzebowa"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://nekrolog-lodz.pl/asortyment/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Główna",
+          "item": "https://nekrolog-lodz.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Asortyment"
+        }
+      ]
+    }
+  ]
   </script>
 
   <!-- rel="publisher" for Facebook -->
