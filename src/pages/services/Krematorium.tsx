@@ -6,7 +6,7 @@ import { CheckCircle, Flame, Clock, Coffee, FileText } from 'lucide-react';
 const Krematorium = () => {
   return (
     <ServiceLayout
-      title="Krematorium w Łodzi"
+      title="Kremacja zwłok w Łodzi"
       description="Profesjonalna usługa kremacji z zachowaniem godności i szacunku dla zmarłego"
       backgroundImage={IMAGES.services.cremation}
       metaDescription="Profesjonalne usługi kremacji w Łodzi. Organizacja kremacji, urny, transport, dokumenty. Pełna pomoc w organizacji pogrzebu po kremacji. ☎ +48 602 274 661"

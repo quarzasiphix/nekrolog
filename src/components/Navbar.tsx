@@ -25,7 +25,7 @@ const servicesItems = [
   { name: "Oprawa muzyczna pogrzebu Łódź", id: "services", path: "/uslugi/oprawa-muzyczna" },
   { name: "Ekshumacja zwłok Łódź", id: "services", path: "/uslugi/ekshumacja-zwlok" },
   { name: "Transport zmarłych Łódź", id: "services", path: "/uslugi/transport-zwlok" },
-  { name: "Krematorium Łódź", id: "services", path: "/uslugi/kremacja-zwlok" }
+  { name: "Kremacja w Łódź", id: "services", path: "/uslugi/kremacja-zwlok" }
 ];
 
 const productsItems = [
