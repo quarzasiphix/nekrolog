@@ -1,49 +1,42 @@
 // vite.config.ts
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import { resolve } from 'node:path';
+import { componentTagger } from 'lovable-tagger';
 
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
+// helper that always resolves from the project root
+const r = (...p: string[]) => resolve(process.cwd(), ...p);
 
+export default defineConfig(({ ssrBuild, mode }) => ({
   plugins: [
     react(),
-    mode === "development" && componentTagger(),
+    mode === 'development' && componentTagger(),      // only in dev
   ].filter(Boolean),
 
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
+    alias: { '@': r('src') },                         // use '@/…' anywhere
   },
 
-  build: {
-    outDir: "build",
-    rollupOptions: {
-      input: {
-        // main React shell
-        "index": path.resolve(__dirname, "index.html"),
-
-        // ASORTYMENT pages
-        "asortyment/index": path.resolve(__dirname, "asortyment", "index.html"),
-        "asortyment/odziez-pogrzebowa": path.resolve(__dirname, "asortyment", "odziez-pogrzebowa.html"),
-        "asortyment/trumny-pogrzebowe": path.resolve(__dirname, "asortyment", "trumny-pogrzebowe.html"),
-        "asortyment/urny-pogrzebowe": path.resolve(__dirname, "asortyment", "urny-pogrzebowe.html"),
-        "asortyment/wiazanki-pogrzebowe": path.resolve(__dirname, "asortyment", "wiazanki-pogrzebowe.html"),
-        "asortyment/wience-pogrzebowe": path.resolve(__dirname, "asortyment", "wience-pogrzebowe.html"),
-
-        // USŁUGI pages
-        "uslugi/index": path.resolve(__dirname, "uslugi", "index.html"),
-        "uslugi/ekshumacja-zwlok": path.resolve(__dirname, "uslugi", "ekshumacja-zwlok.html"),
-        "uslugi/kremacja-zwlok": path.resolve(__dirname, "uslugi", "kremacja-zwlok.html"),
-        "uslugi/oprawa-muzyczna": path.resolve(__dirname, "uslugi", "oprawa-muzyczna.html"),
-        "uslugi/organizacja-pogrzebow": path.resolve(__dirname, "uslugi", "organizacja-pogrzebow.html"),
-        "uslugi/transport-zwlok": path.resolve(__dirname, "uslugi", "transport-zwlok.html"),
-      },
-    },
+  server: {
+    host: '::',
+    port: 8080,
   },
+
+  /**
+   * ┌──────── client bundle ───────┐
+   * │  npm run build               │  -> dist/client/ + manifest
+   * └──────── server bundle ───────┘
+   *                                │
+   *   npm run build:ssr (called    │  -> dist/server/
+   *   automatically from "build")  │
+   */
+  build: ssrBuild
+    ? {
+        ssr: r('src/entry-server.tsx'),
+        outDir: 'dist/server',
+      }
+    : {
+        ssrManifest: true,       // <── correct manifest for SSR
+        outDir: 'dist/client',
+      }
 }));
