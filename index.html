@@ -35,7 +35,7 @@
 
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
+    [{
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Nekrolog Łódź",
@@ -53,7 +53,18 @@
         "https://g.co/kgs/xueCKgX",
         "https://www.facebook.com/people/Zak%C5%82ad-pogrzebowyNekrolog-Jolanta-Kostowska/100092232063111/"
       ]
-    }
+    }, {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://nekrolog-lodz.pl/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Główna"
+        }
+      ]
+    }]
     </script>
 
     <!-- rel="publisher" for Facebook -->
@@ -61,10 +72,6 @@
     
     <!-- Favicon & Styles -->
     <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-
-    <!-- GPT Integration (if needed) -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   </head>
 
   <body>
