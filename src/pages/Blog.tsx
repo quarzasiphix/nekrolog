@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { normalizeForUrl } from "@/lib/utils";
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -138,9 +139,14 @@ const Blog = () => {
                         <CardTitle className="text-xl group-hover:text-primary transition-colors">
                           {post.title}
                         </CardTitle>
-                        <CardDescription className="text-sm leading-relaxed">
-                          {post.excerpt || 'Brak opisu artykułu'}
-                        </CardDescription>
+                        <CardDescription 
+                          className="text-sm leading-relaxed line-clamp-3"
+                          dangerouslySetInnerHTML={{ 
+                            __html: post.excerpt 
+                              ? post.excerpt.replace(/<[^>]*>?/gm, '').substring(0, 180) + (post.excerpt.length > 180 ? '...' : '')
+                              : 'Brak opisu artykułu'
+                          }}
+                        />
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div className="flex items-center justify-between text-xs text-muted-foreground">
@@ -158,7 +164,7 @@ const Blog = () => {
                           variant="link" 
                           className="w-full text-left text-primary hover:text-primary/80 text-sm font-medium p-0 h-auto justify-start"
                         >
-                          <Link to={`/blog/${post.slug}`}>
+                          <Link to={`/blog/${normalizeForUrl(post.slug)}`}>
                             Czytaj więcej →
                           </Link>
                         </Button>

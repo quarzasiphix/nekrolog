@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
+import { normalizeForUrl } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
@@ -140,19 +141,21 @@ const BlogPost = () => {
           name="keywords" 
           content={post.meta_keywords || 'blog pogrzebowy, poradniki pogrzebowe, tradycje pogrzebowe, formalności pogrzebowe, Łódź'} 
         />
-        <link rel="canonical" href={`https://dompogrzebowy-lodz.pl/o-nas/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://dompogrzebowy-lodz.pl/o-nas/blog/${normalizeForUrl(post.slug)}`} />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20 pt-24">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
-          <Button 
-            variant="ghost" 
-            onClick={() => navigate('/blog')} 
-            className="mb-8 -ml-2"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Powrót do bloga
-          </Button>
+          <div className="mb-8 text-center sm:text-left">
+            <Button 
+              variant="default" 
+              onClick={() => navigate('/blog')}
+              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Wróć do listy artykułów
+            </Button>
+          </div>
 
           <article className="bg-card/50 backdrop-blur-sm rounded-lg border border-border/50 overflow-hidden">
             {post.featured_image_url && (
@@ -201,22 +204,29 @@ const BlogPost = () => {
               )}
 
               <div 
-                className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none text-foreground"
-                dangerouslySetInnerHTML={{ __html: post.content }} 
+                className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none text-foreground 
+                  [&_a]:text-primary [&_a:hover]:text-primary/80 [&_a]:font-medium [&_a]:transition-colors
+                  [&_ul]:list-disc [&_ol]:list-decimal [&_ul], [&_ol]:pl-6 
+                  [&_img]:rounded-lg [&_img]:shadow-md [&_img]:my-6 
+                  [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-foreground [&_h1]:mt-10 [&_h1]:mb-6
+                  [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h2]:mt-8 [&_h2]:mb-4 
+                  [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-foreground [&_h3]:mt-6 [&_h3]:mb-3
+                  [&_h4]:text-lg [&_h4]:font-semibold [&_h4]:text-foreground [&_h4]:mt-5 [&_h4]:mb-2
+                  [&_p]:text-foreground/90 [&_p]:mb-4 [&_p:last-child]:mb-0
+                  [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:pl-4 [&_blockquote]:py-1 [&_blockquote]:my-4 [&_blockquote]:text-foreground/80
+                  [&_table]:w-full [&_table]:border [&_table]:border-border [&_th]:bg-secondary/50 [&_th]:p-3 [&_th]:text-left [&_th]:text-foreground [&_td]:p-3 [&_td]:border [&_td]:border-border [&_td]:text-foreground/90
+                  [&_code]:bg-secondary [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:text-foreground/90
+                  [&_pre]:bg-secondary [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:my-4"
+                dangerouslySetInnerHTML={{ 
+                  __html: post.content 
+                    .replace(/<a(?!\s+target=)/g, '<a target="_blank" rel="noopener noreferrer"')
+                    .replace(/<img/g, '<img class="w-full h-auto" loading="lazy"')
+                }} 
               />
             </div>
           </article>
 
-          <div className="mt-12 pt-8 border-t border-border/50">
-            <Button 
-              variant="outline" 
-              onClick={() => navigate('/o-nas/blog')}
-              className="w-full sm:w-auto"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Wróć do listy artykułów
-            </Button>
-          </div>
+
         </div>
       </div>
     </Layout>
