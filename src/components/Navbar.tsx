@@ -16,16 +16,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useIsMobile } from '@/hooks/use-mobile';
-import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
 const servicesItems = [
   { name: "Usługi Pogrzebowe Łódź", id: "services", path: "/uslugi-pogrzebowe-lodz" },
-  { name: "Organizacja pogrzebów Łódź", id: "services", path: "/uslugi/organizacja-pogrzebow" },
-  { name: "Oprawa muzyczna pogrzebu Łódź", id: "services", path: "/uslugi/oprawa-muzyczna" },
-  { name: "Ekshumacja zwłok Łódź", id: "services", path: "/uslugi/ekshumacja" },
-  { name: "Transport zmarłych Łódź", id: "services", path: "/uslugi/transport" },
-  { name: "Krematorium Łódź", id: "services", path: "/uslugi/krematorium" }
+  { name: "Organizacja pogrzebów Łódź", id: "services", path: "/uslugi/organizacja-pogrzebow-lodz" },
+  { name: "Oprawa muzyczna pogrzebu Łódź", id: "services", path: "/uslugi/oprawa-muzyczna-lodz" },
+  { name: "Ekshumacja zwłok Łódź", id: "services", path: "/uslugi/ekshumacja-lodz" },
+  { name: "Transport zmarłych Łódź", id: "services", path: "/uslugi/transport-zmarlych-lodz" },
+  { name: "Krematorium Łódź", id: "services", path: "/uslugi/krematorium-lodz" }
 ];
 
 const productsItems = [
