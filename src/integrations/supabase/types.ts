@@ -14,7 +14,95 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_categories: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      blogs: {
+        Row: {
+          author: string
+          category_id: string | null
+          content: string
+          created_at: string
+          excerpt: string | null
+          featured_image_url: string | null
+          id: string
+          meta_description: string | null
+          meta_keywords: string | null
+          published: boolean
+          published_at: string | null
+          read_time: string | null
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author?: string
+          category_id?: string | null
+          content: string
+          created_at?: string
+          excerpt?: string | null
+          featured_image_url?: string | null
+          id?: string
+          meta_description?: string | null
+          meta_keywords?: string | null
+          published?: boolean
+          published_at?: string | null
+          read_time?: string | null
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string
+          category_id?: string | null
+          content?: string
+          created_at?: string
+          excerpt?: string | null
+          featured_image_url?: string | null
+          id?: string
+          meta_description?: string | null
+          meta_keywords?: string | null
+          published?: boolean
+          published_at?: string | null
+          read_time?: string | null
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blogs_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "blog_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
