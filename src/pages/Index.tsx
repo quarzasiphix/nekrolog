@@ -7,6 +7,7 @@ import Contact from '../components/Contact';
 import ServicesCta from '../components/ServicesCta';
 import Reviews from '../components/Reviews';
 import ServicesTable from '../components/ServicesTable';
+import BlogPreview from '../components/BlogPreview';
 
 const Index = () => {
   useEffect(() => {
@@ -108,6 +109,7 @@ const Index = () => {
       <Reviews />
       <ServicesCta />
       <ServicesTable />
+      <BlogPreview />
       <About />
       <Contact />
       {/* Sekcja "Potrzebujesz pomocy?" */}

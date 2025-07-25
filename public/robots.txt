@@ -1,0 +1,17 @@
+# robots.txt for nekrolog-lodz.pl
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*?*
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Sitemaps
+Sitemap: https://nekrolog-lodz.pl/sitemap.xml
+
+# Crawl-delay: 10  # Uncomment if needed to limit crawl rate
+
+# Host
+Host: https://nekrolog-lodz.pl

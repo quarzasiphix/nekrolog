@@ -38,7 +38,7 @@ const productsItems = [
 ];
 
 const aboutItems = [
-  { name: "Blog", id: "about", path: "/o-nas/blog" }
+  { name: "Blog", id: "about", path: "/blog" }
 ];
 
 const Navbar = () => {

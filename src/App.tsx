@@ -41,23 +41,23 @@ function App() {
             <Sonner />
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/uslugi-pogrzebowe-lodz" element={<UslugiPogrzebowe />} />
-              <Route path="/uslugi/organizacja-pogrzebow-lodz" element={<OrganizacjaPogrzebow />} />
-              <Route path="/uslugi/oprawa-muzyczna-lodz" element={<OprawaMuzyczna />} />
-              <Route path="/uslugi/ekshumacja-lodz" element={<Ekshumacja />} />
-              <Route path="/uslugi/transport-zmarlych-lodz" element={<Transport />} />
-              <Route path="/uslugi/krematorium-lodz" element={<Krematorium />} />
-              <Route path="/asortyment" element={<Asortyment />} />
-              <Route path="/asortyment/odziez" element={<Odziez />} />
-              <Route path="/asortyment/trumny" element={<Trumny />} />
-              <Route path="/asortyment/urny" element={<Urny />} />
-              <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
-              <Route path="/asortyment/wience" element={<Wience />} />
-              <Route path="/o-nas/blog" element={<Blog />} />
-              <Route path="/o-nas/blog/:slug" element={<BlogPost />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/uslugi-pogrzebowe-lodz"             element={<UslugiPogrzebowe />} />
+              <Route path="/uslugi/organizacja-pogrzebow-lodz"  element={<OrganizacjaPogrzebow />} />
+              <Route path="/uslugi/oprawa-muzyczna-lodz"        element={<OprawaMuzyczna />} />
+              <Route path="/uslugi/ekshumacja-lodz"             element={<Ekshumacja />} />
+              <Route path="/uslugi/transport-zmarlych-lodz"     element={<Transport />} />
+              <Route path="/uslugi/krematorium-lodz"            element={<Krematorium />} />
+              <Route path="/asortyment"                         element={<Asortyment />} />
+              <Route path="/asortyment/odziez-lodz"             element={<Odziez />} />
+              <Route path="/asortyment/trumny-lodz"             element={<Trumny />} />
+              <Route path="/asortyment/urny-lodz"               element={<Urny />} />
+              <Route path="/asortyment/wiazanki-lodz"           element={<Wiazanki />} />
+              <Route path="/asortyment/wience-lodz"             element={<Wience />} />
+              <Route path="/blog"                               element={<Blog />} />
+              <Route path="/blog/:slug"                         element={<BlogPost />} />
+              <Route path="*"                                   element={<NotFound />} />
             </Routes>
-          </HelmetProvider>
+          </HelmetProvider> 
         </TooltipProvider>
       </QueryClientProvider>
     </BrowserRouter>

@@ -158,7 +158,7 @@ const Blog = () => {
                           variant="link" 
                           className="w-full text-left text-primary hover:text-primary/80 text-sm font-medium p-0 h-auto justify-start"
                         >
-                          <Link to={`/o-nas/blog/${post.slug}`}>
+                          <Link to={`/blog/${post.slug}`}>
                             Czytaj więcej →
                           </Link>
                         </Button>

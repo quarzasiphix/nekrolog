@@ -147,7 +147,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <Button 
             variant="ghost" 
-            onClick={() => navigate('/o-nas/blog')} 
+            onClick={() => navigate('/blog')} 
             className="mb-8 -ml-2"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
