@@ -37,18 +37,18 @@ function App() {
             <Sonner />
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/uslugi/" element={<UslugiPogrzebowe />} />
+              <Route path="/uslugi-pogrzebowe-lodz" element={<UslugiPogrzebowe />} />
               <Route path="/uslugi/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
               <Route path="/uslugi/oprawa-muzyczna" element={<OprawaMuzyczna />} />
-              <Route path="/uslugi/ekshumacja-zwlok" element={<Ekshumacja />} />
-              <Route path="/uslugi/transport-zwlok" element={<Transport />} />
-              <Route path="/uslugi/kremacja-zwlok" element={<Krematorium />} />
+              <Route path="/uslugi/ekshumacja" element={<Ekshumacja />} />
+              <Route path="/uslugi/transport" element={<Transport />} />
+              <Route path="/uslugi/krematorium" element={<Krematorium />} />
               <Route path="/asortyment" element={<Asortyment />} />
-              <Route path="/asortyment/odziez-pogrzebowa" element={<Odziez />} />
-              <Route path="/asortyment/trumny-pogrzebowe" element={<Trumny />} />
-              <Route path="/asortyment/urny-pogrzebowe" element={<Urny />} />
-              <Route path="/asortyment/wiazanki-pogrzebowe" element={<Wiazanki />} />
-              <Route path="/asortyment/wience-pogrzebowe" element={<Wience />} />
+              <Route path="/asortyment/odziez" element={<Odziez />} />
+              <Route path="/asortyment/trumny" element={<Trumny />} />
+              <Route path="/asortyment/urny" element={<Urny />} />
+              <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
+              <Route path="/asortyment/wience" element={<Wience />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </HelmetProvider>

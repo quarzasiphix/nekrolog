@@ -20,21 +20,21 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
 const servicesItems = [
-  { name: "Usługi Pogrzebowe Łódź", id: "services", path: "/uslugi/" },
+  { name: "Usługi Pogrzebowe Łódź", id: "services", path: "/uslugi-pogrzebowe-lodz" },
   { name: "Organizacja pogrzebów Łódź", id: "services", path: "/uslugi/organizacja-pogrzebow" },
   { name: "Oprawa muzyczna pogrzebu Łódź", id: "services", path: "/uslugi/oprawa-muzyczna" },
-  { name: "Ekshumacja zwłok Łódź", id: "services", path: "/uslugi/ekshumacja-zwlok" },
-  { name: "Transport zmarłych Łódź", id: "services", path: "/uslugi/transport-zwlok" },
-  { name: "Kremacja w Łódź", id: "services", path: "/uslugi/kremacja-zwlok" }
+  { name: "Ekshumacja zwłok Łódź", id: "services", path: "/uslugi/ekshumacja" },
+  { name: "Transport zmarłych Łódź", id: "services", path: "/uslugi/transport" },
+  { name: "Krematorium Łódź", id: "services", path: "/uslugi/krematorium" }
 ];
 
 const productsItems = [
   { name: "Asortyment", id: "products", path: "/asortyment" },
-  { name: "Trumny Łódź", id: "products", path: "/asortyment/trumny-pogrzebowe" },
-  { name: "Urny Łódź", id: "products", path: "/asortyment/urny-pogrzebowe" },
-  { name: "Wiązanki pogrzebowe Łódź", id: "products", path: "/asortyment/wiazanki-pogrzebowe" },
-  { name: "Wieńce pogrzebowe Łódź", id: "products", path: "/asortyment/wience-pogrzebowe" },
-  { name: "Odzież pogrzebowa Łódź", id: "products", path: "/asortyment/odziez-pogrzebowa" }
+  { name: "Trumny Łódź", id: "products", path: "/asortyment/trumny" },
+  { name: "Urny Łódź", id: "products", path: "/asortyment/urny" },
+  { name: "Wiązanki pogrzebowe Łódź", id: "products", path: "/asortyment/wiazanki" },
+  { name: "Wieńce pogrzebowe Łódź", id: "products", path: "/asortyment/wience" },
+  { name: "Odzież pogrzebowa Łódź", id: "products", path: "/asortyment/odziez" }
 ];
 
 const Navbar = () => {

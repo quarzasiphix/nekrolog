@@ -49,7 +49,7 @@ const Asortyment = () => {
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full">
-                <Link to="/asortyment/trumny-pogrzebowe">Zobacz więcej</Link>
+                <Link to="/asortyment/trumny">Zobacz więcej</Link>
               </Button>
             </CardFooter>
           </Card>
@@ -74,7 +74,7 @@ const Asortyment = () => {
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full">
-                <Link to="/asortyment/urny-pogrzebowe">Zobacz więcej</Link>
+                <Link to="/asortyment/urny">Zobacz więcej</Link>
               </Button>
             </CardFooter>
           </Card>
@@ -99,7 +99,7 @@ const Asortyment = () => {
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full">
-                <Link to="/asortyment/wiazanki-pogrzebowe">Zobacz więcej</Link>
+                <Link to="/asortyment/wiazanki">Zobacz więcej</Link>
               </Button>
             </CardFooter>
           </Card>
@@ -125,7 +125,7 @@ const Asortyment = () => {
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full">
-                <Link to="/asortyment/odziez-pogrzebowa">Zobacz więcej</Link>
+                <Link to="/asortyment/odziez">Zobacz więcej</Link>
               </Button>
             </CardFooter>
           </Card>

@@ -150,7 +150,7 @@ const UslugiPogrzebowe = () => {
               title="Transport Zmarłych" 
               icon={<Truck className="w-5 h-5 text-primary" />}
               description="Specjalistyczny transport zmarłych na terenie kraju i za granicą, zapewniający godne przewiezienie ciała z zachowaniem wszelkich procedur."
-              link="/uslugi/transport-zwlok"
+              link="/uslugi/transport"
               image={IMAGES.services.transport}
             />
             
@@ -158,7 +158,7 @@ const UslugiPogrzebowe = () => {
               title="Kremacja" 
               icon={<Flame className="w-5 h-5 text-primary" />}
               description="Organizacja kremacji w profesjonalnych krematoriach, wraz z kompleksową pomocą w przygotowaniu urny i ceremonii pogrzebowej po kremacji."
-              link="/uslugi/kremacja-zwlok"
+              link="/uslugi/krematorium"
               image={IMAGES.services.cremation}
             />
             
@@ -166,7 +166,7 @@ const UslugiPogrzebowe = () => {
               title="Ekshumacja" 
               icon={<Flower className="w-5 h-5 text-primary" />}
               description="Profesjonalne przeprowadzenie ekshumacji zgodnie z przepisami, wraz z załatwieniem wszelkich formalności i dokumentów urzędowych."
-              link="/uslugi/ekshumacja-zwlok"
+              link="/uslugi/ekshumacja"
               image={IMAGES.services.exhumation}
             />
             
