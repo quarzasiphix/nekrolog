@@ -25,8 +25,9 @@ import Urny from "./pages/asortyment/Urny";
 import Wiazanki from "./pages/asortyment/Wiazanki";
 import Wience from "./pages/asortyment/Wience";
 
-// Import blog page
+// Import blog pages
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -41,11 +42,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/uslugi-pogrzebowe-lodz" element={<UslugiPogrzebowe />} />
-              <Route path="/uslugi/organizacja-pogrzebow" element={<OrganizacjaPogrzebow />} />
-              <Route path="/uslugi/oprawa-muzyczna" element={<OprawaMuzyczna />} />
-              <Route path="/uslugi/ekshumacja" element={<Ekshumacja />} />
-              <Route path="/uslugi/transport" element={<Transport />} />
-              <Route path="/uslugi/krematorium" element={<Krematorium />} />
+              <Route path="/uslugi/organizacja-pogrzebow-lodz" element={<OrganizacjaPogrzebow />} />
+              <Route path="/uslugi/oprawa-muzyczna-lodz" element={<OprawaMuzyczna />} />
+              <Route path="/uslugi/ekshumacja-lodz" element={<Ekshumacja />} />
+              <Route path="/uslugi/transport-zmarlych-lodz" element={<Transport />} />
+              <Route path="/uslugi/krematorium-lodz" element={<Krematorium />} />
               <Route path="/asortyment" element={<Asortyment />} />
               <Route path="/asortyment/odziez" element={<Odziez />} />
               <Route path="/asortyment/trumny" element={<Trumny />} />
@@ -53,6 +54,7 @@ function App() {
               <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
               <Route path="/asortyment/wience" element={<Wience />} />
               <Route path="/o-nas/blog" element={<Blog />} />
+              <Route path="/o-nas/blog/:slug" element={<BlogPost />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </HelmetProvider>

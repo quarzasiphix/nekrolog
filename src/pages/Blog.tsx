@@ -1,8 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Calendar, Clock, User } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -81,8 +84,8 @@ const Blog = () => {
         <link rel="canonical" href="https://dompogrzebowy-lodz.pl/o-nas/blog" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
-        <div className="container mx-auto px-4 py-16">
+      <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20 pt-24">
+        <div className="container mx-auto px-4 py-8">
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -150,9 +153,15 @@ const Blog = () => {
                             {new Date(post.created_at).toLocaleDateString('pl-PL')}
                           </div>
                         </div>
-                        <button className="w-full text-left text-primary hover:text-primary/80 text-sm font-medium transition-colors">
-                          Czytaj więcej →
-                        </button>
+                        <Button 
+                          asChild 
+                          variant="link" 
+                          className="w-full text-left text-primary hover:text-primary/80 text-sm font-medium p-0 h-auto justify-start"
+                        >
+                          <Link to={`/o-nas/blog/${post.slug}`}>
+                            Czytaj więcej →
+                          </Link>
+                        </Button>
                       </CardContent>
                     </Card>
                   ))}

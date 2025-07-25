@@ -174,16 +174,6 @@ const Navbar = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-black border border-primary/20">
                   <ul className="grid w-[200px] gap-1 p-2">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <button
-                          onClick={() => scrollToSection('about')}
-                          className="w-full text-left block select-none space-y-1 rounded-md p-3 text-white hover:bg-primary/10 hover:text-primary"
-                        >
-                          <div>O nas</div>
-                        </button>
-                      </NavigationMenuLink>
-                    </li>
                     {aboutItems.map((item) => (
                       <li key={item.name}>
                         <NavigationMenuLink asChild>
