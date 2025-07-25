@@ -119,7 +119,7 @@ const ServicesCta = () => {
             title="Organizacja Pogrzebów"
             description="Kompleksowa organizacja ceremonii pogrzebowej, przejęcie wszystkich formalności oraz profesjonalna obsługa w trudnych chwilach."
             image={IMAGES.services.funeral}
-            link="/uslugi/organizacja-pogrzebow"
+            link="/uslugi/organizacja-pogrzebow-lodz"
             delay={100}
           />
           
@@ -127,7 +127,7 @@ const ServicesCta = () => {
             title="Oprawa Muzyczna"
             description="Profesjonalna oprawa muzyczna ceremonii pogrzebowej, w tym śpiew, organy, trąbka oraz inne instrumenty, dostosowane do charakteru uroczystości."
             image={IMAGES.services.music}
-            link="/uslugi/oprawa-muzyczna"
+            link="/uslugi/oprawa-muzyczna-lodz"
             delay={200}
           />
           
@@ -135,7 +135,7 @@ const ServicesCta = () => {
             title="Transport Zmarłych"
             description="Specjalistyczny transport zmarłych na terenie kraju i za granicą, zapewniający godne przewiezienie ciała z zachowaniem wszelkich procedur."
             image={IMAGES.services.transport}
-            link="/uslugi/transport"
+            link="/uslugi/transport-zmarlych-lodz"
             delay={300}
           />
           
@@ -143,7 +143,7 @@ const ServicesCta = () => {
             title="Kremacja"
             description="Organizacja kremacji w profesjonalnych krematoriach, wraz z kompleksową pomocą w przygotowaniu urny i ceremonii pogrzebowej po kremacji."
             image={IMAGES.services.cremation}
-            link="/uslugi/krematorium"
+            link="/uslugi/krematorium-lodz"
             delay={400}
           />
           
@@ -151,7 +151,7 @@ const ServicesCta = () => {
             title="Ekshumacja"
             description="Profesjonalne przeprowadzenie ekshumacji zgodnie z przepisami, wraz z załatwieniem wszelkich formalności i dokumentów urzędowych."
             image={IMAGES.services.exhumation}
-            link="/uslugi/ekshumacja"
+            link="/uslugi/ekshumacja-lodz"
             delay={500}
           />
           

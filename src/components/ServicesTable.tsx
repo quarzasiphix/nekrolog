@@ -30,13 +30,13 @@ const ServicesTable = () => {
   }, []);
 
   const tableData = [
-    { service: 'Organizacja Pogrzebu', description: 'Kompleksowa organizacja ceremonii pogrzebowej z dopełnieniem formalności', link: '/uslugi/organizacja-pogrzebow' },
-    { service: 'Kremacja', description: 'Przeprowadzenie kremacji w nowoczesnym krematorium', link: '/uslugi/krematorium' },
-    { service: 'Ekshumacja', description: 'Procedura ekshumacji zgodna z obowiązującymi normami', link: '/uslugi/ekshumacja' },
-    { service: 'Transport Zmarłych', description: 'Bezpieczny przewóz ciał, trumien i urn na terenie Polski i Europy', link: '/uslugi/transport' },
-    { service: 'Oprawa Muzyczna', description: 'Zapewnienie oprawy muzycznej idealnie dopasowanej do ceremonii', link: '/uslugi/oprawa-muzyczna' },
-    { service: 'Trumny, Urny, Wiązanki', description: 'Wysokiej jakości produkty pogrzebowe, w tym trumny i urny', link: '/asortyment' },
-    { service: 'Wieńce Pogrzebowe', description: 'Tradycyjne wieńce, symboliczne wyrazy szacunku dla zmarłego', link: '/asortyment/wience' },
+    { service: 'Organizacja Pogrzebu', description: 'Kompleksowa organizacja ceremonii pogrzebowej z dopełnieniem formalności', link: '/uslugi/organizacja-pogrzebow-lodz' },
+    { service: 'Kremacja', description: 'Przeprowadzenie kremacji w nowoczesnym krematorium', link: '/uslugi/krematorium-lodz' },
+    { service: 'Ekshumacja', description: 'Procedura ekshumacji zgodna z obowiązującymi normami', link: '/uslugi/ekshumacja-lodz' },
+    { service: 'Transport Zmarłych', description: 'Bezpieczny przewóz ciał, trumien i urn na terenie Polski i Europy', link: '/uslugi/transport-zmarlych-lodz' },
+    { service: 'Oprawa Muzyczna', description: 'Zapewnienie oprawy muzycznej idealnie dopasowanej do ceremonii', link: '/uslugi/oprawa-muzyczna-lodz' },
+    { service: 'Trumny, Urny, Wiązanki', description: 'Wysokiej jakości produkty pogrzebowe, w tym trumny i urny', link: '/asortyment-lodz' },
+    { service: 'Wieńce Pogrzebowe', description: 'Tradycyjne wieńce, symboliczne wyrazy szacunku dla zmarłego', link: '/asortyment/wience-lodz' },
   ];
 
   return (

@@ -30,11 +30,11 @@ const servicesItems = [
 
 const productsItems = [
   { name: "Asortyment", id: "products", path: "/asortyment" },
-  { name: "Trumny Łódź", id: "products", path: "/asortyment/trumny" },
-  { name: "Urny Łódź", id: "products", path: "/asortyment/urny" },
-  { name: "Wiązanki pogrzebowe Łódź", id: "products", path: "/asortyment/wiazanki" },
-  { name: "Wieńce pogrzebowe Łódź", id: "products", path: "/asortyment/wience" },
-  { name: "Odzież pogrzebowa Łódź", id: "products", path: "/asortyment/odziez" }
+  { name: "Trumny Łódź", id: "products", path: "/asortyment/trumny-lodz" },
+  { name: "Urny Łódź", id: "products", path: "/asortyment/urny-lodz" },
+  { name: "Wiązanki pogrzebowe Łódź", id: "products", path: "/asortyment/wiazanki-lodz" },
+  { name: "Wieńce pogrzebowe Łódź", id: "products", path: "/asortyment/wience-lodz" },
+  { name: "Odzież pogrzebowa Łódź", id: "products", path: "/asortyment/odziez-lodz" }
 ];
 
 const aboutItems = [
