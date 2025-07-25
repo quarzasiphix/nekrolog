@@ -1,46 +1,73 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+
+interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string | null;
+  author: string;
+  created_at: string;
+  read_time: string | null;
+  category_name: string | null;
+  slug: string;
+}
 
 const Blog = () => {
-  // Placeholder blog posts - you can replace this with real data later
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Jak przygotować się do ceremonii pogrzebowej",
-      excerpt: "Praktyczny przewodnik po organizacji ceremonii pogrzebowej w trudnych chwilach.",
-      content: "Szczegółowy opis procesu organizacji ceremonii...",
-      author: "Dom Pogrzebowy Łódź",
-      date: "2024-01-15",
-      readTime: "5 min",
-      category: "Poradniki",
-      slug: "jak-przygotowac-sie-do-ceremonii-pogrzebowej"
-    },
-    {
-      id: 2,
-      title: "Tradycje pogrzebowe w Polsce",
-      excerpt: "Poznaj historię i znaczenie polskich tradycji pogrzebowych.",
-      content: "Historia polskich tradycji pogrzebowych...",
-      author: "Dom Pogrzebowy Łódź",
-      date: "2024-01-10",
-      readTime: "7 min",
-      category: "Tradycje",
-      slug: "tradycje-pogrzebowe-w-polsce"
-    },
-    {
-      id: 3,
-      title: "Dokumenty potrzebne przy zgonie",
-      excerpt: "Lista dokumentów i formalności do załatwienia po śmierci bliskiej osoby.",
-      content: "Szczegółowa lista dokumentów...",
-      author: "Dom Pogrzebowy Łódź",
-      date: "2024-01-05",
-      readTime: "4 min",
-      category: "Formalności",
-      slug: "dokumenty-potrzebne-przy-zgonie"
-    }
-  ];
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchBlogPosts = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('blogs')
+          .select(`
+            id,
+            title,
+            excerpt,
+            author,
+            created_at,
+            read_time,
+            slug,
+            blog_categories(name)
+          `)
+          .eq('published', true)
+          .order('created_at', { ascending: false });
+
+        if (error) {
+          setError('Błąd podczas ładowania artykułów');
+          console.error('Error fetching blog posts:', error);
+          return;
+        }
+
+        const formattedPosts: BlogPost[] = (data || []).map((post: any) => ({
+          id: post.id,
+          title: post.title,
+          excerpt: post.excerpt,
+          author: post.author,
+          created_at: post.created_at,
+          read_time: post.read_time || '5 min',
+          category_name: post.blog_categories?.name || null,
+          slug: post.slug,
+        }));
+
+        setBlogPosts(formattedPosts);
+      } catch (err) {
+        setError('Błąd podczas ładowania artykułów');
+        console.error('Error:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogPosts();
+  }, []);
 
   return (
     <Layout>
@@ -67,45 +94,81 @@ const Blog = () => {
             </p>
           </div>
 
+          {/* Loading State */}
+          {loading && (
+            <div className="text-center py-16">
+              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+              <p className="mt-4 text-muted-foreground">Ładowanie artykułów...</p>
+            </div>
+          )}
+
+          {/* Error State */}
+          {error && (
+            <div className="text-center py-16">
+              <p className="text-destructive mb-4">{error}</p>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                Spróbuj ponownie
+              </button>
+            </div>
+          )}
+
           {/* Blog Posts Grid */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50">
-                <CardHeader className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <Badge variant="secondary" className="text-xs">
-                      {post.category}
-                    </Badge>
-                    <div className="flex items-center text-xs text-muted-foreground">
-                      <Clock className="w-3 h-3 mr-1" />
-                      {post.readTime}
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm leading-relaxed">
-                    {post.excerpt}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <div className="flex items-center">
-                      <User className="w-3 h-3 mr-1" />
-                      {post.author}
-                    </div>
-                    <div className="flex items-center">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      {new Date(post.date).toLocaleDateString('pl-PL')}
-                    </div>
-                  </div>
-                  <button className="w-full text-left text-primary hover:text-primary/80 text-sm font-medium transition-colors">
-                    Czytaj więcej →
-                  </button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {!loading && !error && (
+            <>
+              {blogPosts.length > 0 ? (
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+                  {blogPosts.map((post) => (
+                    <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50">
+                      <CardHeader className="space-y-4">
+                        <div className="flex items-center justify-between">
+                          <Badge variant="secondary" className="text-xs">
+                            {post.category_name || 'Artykuł'}
+                          </Badge>
+                          <div className="flex items-center text-xs text-muted-foreground">
+                            <Clock className="w-3 h-3 mr-1" />
+                            {post.read_time}
+                          </div>
+                        </div>
+                        <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                          {post.title}
+                        </CardTitle>
+                        <CardDescription className="text-sm leading-relaxed">
+                          {post.excerpt || 'Brak opisu artykułu'}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <div className="flex items-center justify-between text-xs text-muted-foreground">
+                          <div className="flex items-center">
+                            <User className="w-3 h-3 mr-1" />
+                            {post.author}
+                          </div>
+                          <div className="flex items-center">
+                            <Calendar className="w-3 h-3 mr-1" />
+                            {new Date(post.created_at).toLocaleDateString('pl-PL')}
+                          </div>
+                        </div>
+                        <button className="w-full text-left text-primary hover:text-primary/80 text-sm font-medium transition-colors">
+                          Czytaj więcej →
+                        </button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-16">
+                  <p className="text-muted-foreground text-lg">
+                    Brak opublikowanych artykułów
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Wkrótce pojawią się tu nowe artykuły i poradniki
+                  </p>
+                </div>
+              )}
+            </>
+          )}
 
           {/* CTA Section */}
           <div className="text-center mt-16 p-8 bg-card/30 backdrop-blur-sm rounded-lg border border-border/50">
