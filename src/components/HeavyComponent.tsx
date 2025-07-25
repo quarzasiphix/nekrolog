@@ -1,6 +1,4 @@
-import { lazy, Suspense, useState } from 'react';
-
-const HeavyFeature = lazy(() => import('./HeavyFeature'));
+import { useState } from 'react';
 
 export function HeavyComponent() {
   const [showFeature, setShowFeature] = useState(false);
@@ -9,10 +7,8 @@ export function HeavyComponent() {
     <div>
       <button onClick={() => setShowFeature(true)}>Load Feature</button>
       {showFeature && (
-        <Suspense fallback={<div>Loading...</div>}>
-          <HeavyFeature />
-        </Suspense>
+        <div>Feature loaded!</div>
       )}
     </div>
   );
-} 
+}

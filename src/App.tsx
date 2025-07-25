@@ -25,6 +25,9 @@ import Urny from "./pages/asortyment/Urny";
 import Wiazanki from "./pages/asortyment/Wiazanki";
 import Wience from "./pages/asortyment/Wience";
 
+// Import blog page
+import Blog from "./pages/Blog";
+
 const queryClient = new QueryClient();
 
 function App() {
@@ -49,6 +52,7 @@ function App() {
               <Route path="/asortyment/urny" element={<Urny />} />
               <Route path="/asortyment/wiazanki" element={<Wiazanki />} />
               <Route path="/asortyment/wience" element={<Wience />} />
+              <Route path="/o-nas/blog" element={<Blog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </HelmetProvider>

@@ -1,12 +1,7 @@
-import { lazy, Suspense } from 'react';
-
-// Lazy load the map component
-const GoogleMap = lazy(() => import('./GoogleMap'));
-
 export function Map() {
   return (
-    <Suspense fallback={<div>Loading map...</div>}>
-      <GoogleMap />
-    </Suspense>
+    <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
+      <p className="text-muted-foreground">Map component placeholder</p>
+    </div>
   );
-} 
+}
