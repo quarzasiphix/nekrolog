@@ -37,6 +37,10 @@ const productsItems = [
   { name: "Odzież pogrzebowa Łódź", id: "products", path: "/asortyment/odziez" }
 ];
 
+const aboutItems = [
+  { name: "Blog", id: "about", path: "/o-nas/blog" }
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -162,12 +166,41 @@ const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <button 
-            onClick={() => scrollToSection('about')} 
-            className="text-white hover:text-primary transition-colors py-2"
-          >
-            O nas
-          </button>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-white data-[state=open]:text-primary hover:text-primary/90 hover:bg-transparent focus:bg-transparent px-3 py-2">
+                  O nas
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-black border border-primary/20">
+                  <ul className="grid w-[200px] gap-1 p-2">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <button
+                          onClick={() => scrollToSection('about')}
+                          className="w-full text-left block select-none space-y-1 rounded-md p-3 text-white hover:bg-primary/10 hover:text-primary"
+                        >
+                          <div>O nas</div>
+                        </button>
+                      </NavigationMenuLink>
+                    </li>
+                    {aboutItems.map((item) => (
+                      <li key={item.name}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to={item.path}
+                            className="w-full text-left block select-none space-y-1 rounded-md p-3 text-white hover:bg-primary/10 hover:text-primary"
+                          >
+                            <div>{item.name}</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <button 
             onClick={() => scrollToSection('contact')} 
             className="text-white hover:text-primary transition-colors py-2"
@@ -260,13 +293,39 @@ const Navbar = () => {
               </div>
             )}
           </div>
+
+          <div className="border-b border-white/10">
+            <button 
+              onClick={() => toggleSubmenu('about')}
+              className="flex items-center justify-between text-white hover:text-primary transition-colors text-xl py-3 w-full"
+            >
+              <span>O nas</span>
+              <ChevronDown className={`w-5 h-5 transition-transform ${activeSubmenu === 'about' ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {activeSubmenu === 'about' && (
+              <div className="pl-4 pb-2 space-y-2">
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="text-gray-300 hover:text-primary transition-colors text-lg py-2 w-full text-left flex items-center"
+                >
+                  <ChevronRight className="w-4 h-4 mr-2" />
+                  <span>O nas</span>
+                </button>
+                {aboutItems.map((item) => (
+                  <Link 
+                    key={item.name}
+                    to={item.path}
+                    className="text-gray-300 hover:text-primary transition-colors text-lg py-2 w-full text-left flex items-center"
+                  >
+                    <ChevronRight className="w-4 h-4 mr-2" />
+                    <span>{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           
-          <button 
-            onClick={() => scrollToSection('about')} 
-            className="text-white hover:text-primary transition-colors text-xl py-3 border-b border-white/10 w-full text-left"
-          >
-            O nas
-          </button>
           
           <button 
             onClick={() => scrollToSection('contact')} 
