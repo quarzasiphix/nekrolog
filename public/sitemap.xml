@@ -85,9 +85,33 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekrolog-lodz.pl/blog/:slug</loc>
+    <loc>https://nekrolog-lodz.pl/o-nas</loc>
     <lastmod>2025-07-25</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nekrolog-lodz.pl/kontakt</loc>
+    <lastmod>2025-07-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nekrolog-lodz.pl/rodo</loc>
+    <lastmod>2025-07-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://nekrolog-lodz.pl/polityka-prywatnosci</loc>
+    <lastmod>2025-07-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://nekrolog-lodz.pl/regulamin</loc>
+    <lastmod>2025-07-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
