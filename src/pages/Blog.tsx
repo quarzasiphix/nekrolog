@@ -22,6 +22,7 @@ interface BlogPost {
 }
 
 const Blog = () => {
+  console.log("Blog component rendering");
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

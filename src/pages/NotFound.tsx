@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { IMAGES } from "../assets/images";
 
 const NotFound = () => {
+  console.log("NotFound component rendering for path:", window.location.pathname);
   const location = useLocation();
 
   useEffect(() => {

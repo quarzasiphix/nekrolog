@@ -32,6 +32,7 @@ import BlogPost from "./pages/BlogPost";
 const queryClient = new QueryClient();
 
 function App() {
+  console.log("App component rendering");
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
