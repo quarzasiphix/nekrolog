@@ -82,7 +82,7 @@ const Blog = () => {
           content="Blog Domu Pogrzebowego w Łodzi. Artykuły, poradniki i informacje o usługach pogrzebowych, tradycjach i formalności związanych z organizacją pogrzebu." 
         />
         <meta name="keywords" content="blog pogrzebowy, poradniki pogrzebowe, tradycje pogrzebowe, formalności pogrzebowe, Łódź" />
-        <link rel="canonical" href="https://dompogrzebowy-lodz.pl/o-nas/blog" />
+        <link rel="canonical" href="https://dompogrzebowy-lodz.pl/blog" />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20 pt-24">

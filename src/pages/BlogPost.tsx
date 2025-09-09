@@ -121,7 +121,7 @@ const BlogPost = () => {
           <p className="text-muted-foreground mb-6">
             Przepraszamy, nie udało się załadować żądanego artykułu.
           </p>
-          <Button onClick={() => navigate('/o-nas/blog')}>
+          <Button onClick={() => navigate('/blog')}>
             Przejdź do listy artykułów
           </Button>
         </div>
@@ -141,7 +141,7 @@ const BlogPost = () => {
           name="keywords" 
           content={post.meta_keywords || 'blog pogrzebowy, poradniki pogrzebowe, tradycje pogrzebowe, formalności pogrzebowe, Łódź'} 
         />
-        <link rel="canonical" href={`https://dompogrzebowy-lodz.pl/o-nas/blog/${normalizeForUrl(post.slug)}`} />
+        <link rel="canonical" href={`https://dompogrzebowy-lodz.pl/blog/${normalizeForUrl(post.slug)}`} />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20 pt-24">
